@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J!G - Download App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 500px;
+            padding: 40px 20px;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(255, 68, 0, 0.3);
+            background: #000000;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #FF4400;
+            font-family: 'Righteous', sans-serif;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #cccccc;
+        }
+        
+        .download-button {
+            background: linear-gradient(45deg, #FF4400, #FF6600);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 68, 0, 0.4);
+            margin-bottom: 30px;
+        }
+        
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 68, 0, 0.6);
+            background: linear-gradient(45deg, #FF6600, #FF8800);
+        }
+        
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .info h3 {
+            color: #FF4400;
+            margin-bottom: 10px;
+        }
+        
+        .info p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+        
+        .features {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            background: rgba(255, 68, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #FF4400;
+        }
+        
+        .contact {
+            margin-top: 30px;
+            color: #999;
+        }
+        
+        .contact a {
+            color: #FF4400;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 3rem;
+            }
+            
+            .download-button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- J!G Logo -->
+        <div class="logo">J!G</div>
+        
+        <!-- Tagline -->
+        <p class="tagline">Bid for Exclusive Creator Experiences</p>
+        
+        <!-- Download Button -->
+        <a href="jig_v1.apk" download class="download-button">
+            📱 Download JIG APK
+        </a>
+        
+        <!-- App Info -->
+        <div class="info">
+            <h3>🎯 How It Works:</h3>
+            <div class="features">
+                <div class="feature">
+                    <strong>🪙 Purchase JigCoins</strong><br>
+                    Buy jigcoins to participate
+                </div>
+                <div class="feature">
+                    <strong>🏆 Bid in Arenas</strong><br>
+                    Compete for exclusive creator experiences
+                </div>
+                <div class="feature">
+                    <strong>🎁 Win Amazing Rewards</strong><br>
+                    Hang out with your favorite creators, get custom content, and more!
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">
+                <strong>Requirements:</strong> Android 5.0+ | 
+                <strong>Size:</strong> ~243MB | 
+                <strong>Age:</strong> 18+ for purchases
+            </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact">
+            <strong>Contact:</strong>
+            <br>
+            <a href="mailto:grandjig619@gmail.com">grandjig619@gmail.com</a>
+            <br>
+            <span>Supporting mail: <a href="mailto:tobioyewale24@gmail.com">tobioyewale24@gmail.com</a></span>
+        </div>
+    </div>
+
+    <!-- ✅ DEEP LINK REDIRECT SCRIPT -->
+    <script>
+        // Parse URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const path = window.location.pathname;
+        
+        // Build deep link based on URL
+        let deepLink = 'jiggy://';
+        
+        // Check for specific routes
+        if (path.includes('/profile')) {
+            const userId = urlParams.get('userId');
+            if (userId) {
+                deepLink += `profile?userId=${userId}`;
+            }
+        } else if (path.includes('/lobby')) {
+            const streamId = urlParams.get('streamId');
+            const title = urlParams.get('title');
+            const creator = urlParams.get('creator');
+            const date = urlParams.get('date');
+            
+            if (streamId) {
+                deepLink += `lobby?streamId=${streamId}&streamTitle=${encodeURIComponent(title || 'Stream')}&creatorUsername=${encodeURIComponent(creator || 'Creator')}&scheduledDate=${date || new Date().toISOString()}`;
+            }
+        } else if (path.includes('/chat')) {
+            const userId = urlParams.get('userId');
+            const username = urlParams.get('username');
+            
+            if (userId) {
+                deepLink += `chat?otherUserId=${userId}&otherUsername=${encodeURIComponent(username || 'User')}`;
+            }
+        }
+        
+        // Try to open the app
+        if (deepLink !== 'jiggy://') {
+            console.log('Attempting to open deep link:', deepLink);
+            window.location.href = deepLink;
+            
+            // Fallback: If app doesn't open in 2 seconds, stay on download page
+            setTimeout(() => {
+                console.log('App did not open, showing download page');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
