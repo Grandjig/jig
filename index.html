@@ -130,18 +130,12 @@
 </head>
 <body>
     <div class="container">
-        <!-- J!G Logo -->
         <div class="logo">J!G</div>
-        
-        <!-- Tagline -->
         <p class="tagline">Bid for Exclusive Creator Experiences</p>
-        
-        <!-- Download Button -->
         <a href="jig_v1.apk" download class="download-button">
             📱 Download JIG APK
         </a>
         
-        <!-- App Info -->
         <div class="info">
             <h3>🎯 How It Works:</h3>
             <div class="features">
@@ -166,7 +160,6 @@
             </p>
         </div>
 
-        <!-- Contact Info -->
         <div class="contact">
             <strong>Contact:</strong>
             <br>
@@ -176,22 +169,18 @@
         </div>
     </div>
 
-    <!-- ✅ DEEP LINK REDIRECT SCRIPT -->
     <script>
-        // Parse URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-        const path = window.location.pathname;
+        const path = urlParams.get('path');
         
-        // Build deep link based on URL
         let deepLink = 'jiggy://';
         
-        // Check for specific routes
-        if (path.includes('/profile')) {
+        if (path === 'profile') {
             const userId = urlParams.get('userId');
             if (userId) {
                 deepLink += `profile?userId=${userId}`;
             }
-        } else if (path.includes('/lobby')) {
+        } else if (path === 'lobby') {
             const streamId = urlParams.get('streamId');
             const title = urlParams.get('title');
             const creator = urlParams.get('creator');
@@ -200,24 +189,19 @@
             if (streamId) {
                 deepLink += `lobby?streamId=${streamId}&streamTitle=${encodeURIComponent(title || 'Stream')}&creatorUsername=${encodeURIComponent(creator || 'Creator')}&scheduledDate=${date || new Date().toISOString()}`;
             }
-        } else if (path.includes('/chat')) {
+        } else if (path === 'chat') {
             const userId = urlParams.get('userId');
             const username = urlParams.get('username');
             
             if (userId) {
-                deepLink += `chat?otherUserId=${userId}&otherUsername=${encodeURIComponent(username || 'User')}`;
+                deepLink += `chat?userId=${userId}&username=${encodeURIComponent(username || 'User')}`;
             }
         }
         
-        // Try to open the app
         if (deepLink !== 'jiggy://') {
-            console.log('Attempting to open deep link:', deepLink);
+            console.log('Opening:', deepLink);
             window.location.href = deepLink;
-            
-            // Fallback: If app doesn't open in 2 seconds, stay on download page
-            setTimeout(() => {
-                console.log('App did not open, showing download page');
-            }, 2000);
+            setTimeout(() => console.log('App not installed, showing download page'), 2000);
         }
     </script>
 </body>
