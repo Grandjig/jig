@@ -112,6 +112,19 @@
             text-decoration: none;
         }
         
+        .redirect-message {
+            background: rgba(255, 68, 0, 0.2);
+            border: 1px solid #FF4400;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            display: none;
+        }
+        
+        .redirect-message.active {
+            display: block;
+        }
+        
         @media (max-width: 600px) {
             .logo {
                 font-size: 3rem;
@@ -132,6 +145,12 @@
     <div class="container">
         <div class="logo">J!G</div>
         <p class="tagline">Bid for Exclusive Creator Experiences</p>
+        
+        <div id="redirectMessage" class="redirect-message">
+            <p>🔄 Attempting to open in JIG app...</p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">If the app doesn't open automatically, please download it below.</p>
+        </div>
+        
         <a href="jig_v1.apk" download class="download-button">
             📱 Download JIG APK
         </a>
@@ -170,38 +189,69 @@
     </div>
 
     <script>
+        // Parse URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const path = urlParams.get('path');
         
-        let deepLink = 'jiggy://';
-        
-        if (path === 'profile') {
-            const userId = urlParams.get('userId');
-            if (userId) {
-                deepLink += `profile?userId=${userId}`;
-            }
-        } else if (path === 'lobby') {
-            const streamId = urlParams.get('streamId');
-            const title = urlParams.get('title');
-            const creator = urlParams.get('creator');
-            const date = urlParams.get('date');
+        // Only attempt deep link if we have a path parameter
+        if (path) {
+            let deepLink = '';
             
-            if (streamId) {
-                deepLink += `lobby?streamId=${streamId}&streamTitle=${encodeURIComponent(title || 'Stream')}&creatorUsername=${encodeURIComponent(creator || 'Creator')}&scheduledDate=${date || new Date().toISOString()}`;
+            // Build the correct deep link based on the path
+            switch(path) {
+                case 'profile':
+                    const profileUserId = urlParams.get('userId');
+                    if (profileUserId) {
+                        deepLink = `jiggy://profile?userId=${profileUserId}`;
+                    }
+                    break;
+                    
+                case 'lobby':
+                    const streamId = urlParams.get('streamId');
+                    const title = urlParams.get('title');
+                    const creator = urlParams.get('creator');
+                    const date = urlParams.get('date');
+                    
+                    if (streamId) {
+                        // Build properly formatted deep link for lobby
+                        deepLink = `jiggy://lobby?streamId=${streamId}`;
+                        if (title) deepLink += `&streamTitle=${encodeURIComponent(title)}`;
+                        if (creator) deepLink += `&creatorUsername=${encodeURIComponent(creator)}`;
+                        if (date) deepLink += `&scheduledDate=${date}`;
+                    }
+                    break;
+                    
+                case 'chat':
+                    const chatUserId = urlParams.get('userId');
+                    const username = urlParams.get('username');
+                    
+                    if (chatUserId) {
+                        deepLink = `jiggy://chat?userId=${chatUserId}`;
+                        if (username) deepLink += `&username=${encodeURIComponent(username)}`;
+                    }
+                    break;
             }
-        } else if (path === 'chat') {
-            const userId = urlParams.get('userId');
-            const username = urlParams.get('username');
             
-            if (userId) {
-                deepLink += `chat?userId=${userId}&username=${encodeURIComponent(username || 'User')}`;
+            // If we have a valid deep link, attempt to open it
+            if (deepLink) {
+                console.log('Attempting to open deep link:', deepLink);
+                
+                // Show redirect message
+                const redirectMsg = document.getElementById('redirectMessage');
+                if (redirectMsg) {
+                    redirectMsg.classList.add('active');
+                }
+                
+                // Attempt to open the app
+                window.location.href = deepLink;
+                
+                // Hide message after a delay if still on page
+                setTimeout(() => {
+                    if (redirectMsg) {
+                        redirectMsg.classList.remove('active');
+                    }
+                }, 3000);
             }
-        }
-        
-        if (deepLink !== 'jiggy://') {
-            console.log('Opening:', deepLink);
-            window.location.href = deepLink;
-            setTimeout(() => console.log('App not installed, showing download page'), 2000);
         }
     </script>
 </body>
