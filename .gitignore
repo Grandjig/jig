@@ -4,7 +4,6 @@
 **/.env
 
 # Build files
-app/assets/
 
 # Flutter/Dart
 .dart_tool/
