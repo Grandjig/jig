@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J!G - Download App</title>
+    <title>J!G - Bid for Exclusive Creator Experiences</title>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <style>
         * {
@@ -25,24 +25,23 @@
         }
         
         .container {
-            max-width: 500px;
+            max-width: 550px;
             padding: 40px 20px;
         }
         
         .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+            width: 140px;
+            height: 140px;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 30px rgba(255, 68, 0, 0.3);
-            background: #000000;
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: #FF4400;
-            font-family: 'Righteous', sans-serif;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         .tagline {
@@ -51,8 +50,35 @@
             color: #cccccc;
         }
         
-        .download-button {
-            background: linear-gradient(45deg, #FF4400, #FF6600);
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .primary-button {
+            background: linear-gradient(45deg, #E84118, #F15122);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(232, 65, 24, 0.4);
+        }
+        
+        .primary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(232, 65, 24, 0.6);
+            background: linear-gradient(45deg, #F15122, #F66735);
+        }
+        
+        .secondary-button {
+            background: rgba(232, 65, 24, 0.15);
+            border: 2px solid #E84118;
             color: white;
             padding: 18px 40px;
             font-size: 1.3rem;
@@ -61,14 +87,25 @@
             border-radius: 50px;
             display: inline-block;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(255, 68, 0, 0.4);
-            margin-bottom: 30px;
         }
         
-        .download-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 68, 0, 0.6);
-            background: linear-gradient(45deg, #FF6600, #FF8800);
+        .secondary-button:hover {
+            background: rgba(232, 65, 24, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(232, 65, 24, 0.3);
+        }
+        
+        .redirect-message {
+            background: rgba(232, 65, 24, 0.2);
+            border: 1px solid #E84118;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            display: none;
+        }
+        
+        .redirect-message.active {
+            display: block;
         }
         
         .info {
@@ -80,7 +117,7 @@
         }
         
         .info h3 {
-            color: #FF4400;
+            color: #E84118;
             margin-bottom: 10px;
         }
         
@@ -96,10 +133,19 @@
         }
         
         .feature {
-            background: rgba(255, 68, 0, 0.1);
+            background: rgba(232, 65, 24, 0.1);
             padding: 15px;
             border-radius: 10px;
-            border-left: 4px solid #FF4400;
+            border-left: 4px solid #E84118;
+        }
+        
+        .download-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #999;
         }
         
         .contact {
@@ -108,30 +154,23 @@
         }
         
         .contact a {
-            color: #FF4400;
+            color: #E84118;
             text-decoration: none;
-        }
-        
-        .redirect-message {
-            background: rgba(255, 68, 0, 0.2);
-            border: 1px solid #FF4400;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            display: none;
-        }
-        
-        .redirect-message.active {
-            display: block;
         }
         
         @media (max-width: 600px) {
             .logo {
-                font-size: 3rem;
+                width: 120px;
+                height: 120px;
             }
             
-            .download-button {
-                padding: 15px 30px;
+            .primary-button {
+                padding: 18px 35px;
+                font-size: 1.2rem;
+            }
+            
+            .secondary-button {
+                padding: 16px 35px;
                 font-size: 1.1rem;
             }
             
@@ -143,7 +182,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo">J!G</div>
+        <div class="logo">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ctext x='50%25' y='50%25' font-size='120' font-family='Righteous, sans-serif' font-weight='bold' fill='%23E84118' text-anchor='middle' dominant-baseline='central'%3EJ!G%3C/svg%3E" alt="JIG Logo">
+        </div>
         <p class="tagline">Bid for Exclusive Creator Experiences</p>
         
         <div id="redirectMessage" class="redirect-message">
@@ -151,9 +192,15 @@
             <p style="font-size: 0.9rem; margin-top: 10px;">If the app doesn't open automatically, please download it below.</p>
         </div>
         
-        <a id="download-btn" class="download-button" href="https://bit.ly/getjigapp" target="_blank" rel="noopener noreferrer">
-    📱 Download JIG App
-</a>
+        <div class="cta-buttons">
+            <a class="primary-button" href="/jig-links/app/" rel="noopener noreferrer">
+                🌐 Open Web App
+            </a>
+            
+            <a class="secondary-button" href="https://bit.ly/getjigapp" target="_blank" rel="noopener noreferrer">
+                📱 Download Android App
+            </a>
+        </div>
         
         <div class="info">
             <h3>🎯 How It Works:</h3>
@@ -172,11 +219,11 @@
                 </div>
             </div>
             
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">
-                <strong>Requirements:</strong> Android 5.0+ | 
+            <div class="download-info">
+                <strong>Android App Requirements:</strong> Android 5.0+ | 
                 <strong>Size:</strong> ~94MB | 
                 <strong>Age:</strong> 18+ for purchases
-            </p>
+            </div>
         </div>
 
         <div class="contact">
@@ -213,7 +260,6 @@
                     const date = urlParams.get('date');
                     
                     if (streamId) {
-                        // Build properly formatted deep link for lobby
                         deepLink = `jiggy://lobby?streamId=${streamId}`;
                         if (title) deepLink += `&streamTitle=${encodeURIComponent(title)}`;
                         if (creator) deepLink += `&creatorUsername=${encodeURIComponent(creator)}`;
@@ -236,16 +282,13 @@
             if (deepLink) {
                 console.log('Attempting to open deep link:', deepLink);
                 
-                // Show redirect message
                 const redirectMsg = document.getElementById('redirectMessage');
                 if (redirectMsg) {
                     redirectMsg.classList.add('active');
                 }
                 
-                // Attempt to open the app
                 window.location.href = deepLink;
                 
-                // Hide message after a delay if still on page
                 setTimeout(() => {
                     if (redirectMsg) {
                         redirectMsg.classList.remove('active');
@@ -256,5 +299,3 @@
     </script>
 </body>
 </html>
-
-
