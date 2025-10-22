@@ -98697,7 +98697,7 @@ G(a){var s,r=null,q=$.a6K(),p=A.bba(A.N(a).p2).ayy(B.e,B.e)
 p=A.z3(B.FV,new A.w1(B.E,r,r,r,B.l,B.e,r,r,r,r,r,r,r,r),r,B.IJ,new A.wP(A.cx(r,r,B.l,r,r,r,r,r,r,B.e,r,r,r,r,new A.bK(A.ac(20),B.r),r,r,r,r)),new A.xM(A.al_(r,r,r,r,r,r,r,r,r,B.e,r,r,r,r,new A.bK(A.ac(20),B.r),B.p3,r,r,r,r)),B.q,p,r)
 if(this.d)s=B.FZ
 else s=this.e?B.Fj:B.Fn
-return new A.En(q,s,new A.aGx(this),"J!G",p,!1,r)},
+return new A.En(q,s,new A.aGx(this),"J!G App",p,!1,r)},
 ajQ(a){var s,r,q,p,o=null,n=$.kd(),m=a.a,l=A.f(m)
 n.M(B.a6,"\ud83d\uddfa\ufe0f Generating route: "+l,o,o)
 if((m==null?o:B.c.c5(m,"/?"))===!0){n.M(B.cY,"\u26a0\ufe0f Malformed route detected: "+l,o,o)
