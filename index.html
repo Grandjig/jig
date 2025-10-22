@@ -22,10 +22,11 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 20px;
         }
         
         .container {
-            max-width: 550px;
+            max-width: 600px;
             padding: 40px 20px;
         }
         
@@ -45,29 +46,24 @@
         }
         
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 40px;
             color: #cccccc;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
+            font-weight: 500;
         }
         
         .primary-button {
             background: linear-gradient(45deg, #E84118, #F15122);
             color: white;
-            padding: 20px 40px;
-            font-size: 1.4rem;
+            padding: 22px 50px;
+            font-size: 1.5rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
             display: inline-block;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(232, 65, 24, 0.4);
+            margin-bottom: 40px;
         }
         
         .primary-button:hover {
@@ -76,54 +72,88 @@
             background: linear-gradient(45deg, #F15122, #F66735);
         }
         
-        .secondary-button {
-            background: rgba(232, 65, 24, 0.15);
-            border: 2px solid #E84118;
-            color: white;
-            padding: 18px 40px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            display: inline-block;
+        .install-section {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(232, 65, 24, 0.2);
+        }
+        
+        .install-section h3 {
+            color: #E84118;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .platform-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .platform-tab {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            border-radius: 25px;
+            cursor: pointer;
             transition: all 0.3s ease;
+            font-weight: 600;
         }
         
-        .secondary-button:hover {
-            background: rgba(232, 65, 24, 0.25);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(232, 65, 24, 0.3);
-        }
-        
-        .redirect-message {
+        .platform-tab:hover {
             background: rgba(232, 65, 24, 0.2);
-            border: 1px solid #E84118;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            display: none;
         }
         
-        .redirect-message.active {
+        .platform-tab.active {
+            background: rgba(232, 65, 24, 0.3);
+            border-color: #E84118;
+        }
+        
+        .platform-content {
+            display: none;
+            text-align: left;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .platform-content.active {
             display: block;
         }
         
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .install-step {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border-left: 4px solid #E84118;
+        }
+        
+        .install-step strong {
+            color: #E84118;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
         .info {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
             border-radius: 15px;
-            margin-top: 20px;
+            margin-top: 30px;
             backdrop-filter: blur(10px);
         }
         
         .info h3 {
             color: #E84118;
-            margin-bottom: 10px;
-        }
-        
-        .info p {
-            color: #cccccc;
-            line-height: 1.6;
+            margin-bottom: 15px;
         }
         
         .features {
@@ -137,25 +167,22 @@
             padding: 15px;
             border-radius: 10px;
             border-left: 4px solid #E84118;
-        }
-        
-        .download-info {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #999;
+            text-align: left;
         }
         
         .contact {
             margin-top: 30px;
             color: #999;
+            font-size: 0.9rem;
         }
         
         .contact a {
             color: #E84118;
             text-decoration: none;
+        }
+        
+        .contact a:hover {
+            text-decoration: underline;
         }
         
         @media (max-width: 600px) {
@@ -165,17 +192,16 @@
             }
             
             .primary-button {
-                padding: 18px 35px;
-                font-size: 1.2rem;
-            }
-            
-            .secondary-button {
-                padding: 16px 35px;
-                font-size: 1.1rem;
+                padding: 18px 40px;
+                font-size: 1.3rem;
             }
             
             .container {
                 padding: 20px 15px;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -183,73 +209,150 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ctext x='50%25' y='50%25' font-size='120' font-family='Righteous, sans-serif' font-weight='bold' fill='%23E84118' text-anchor='middle' dominant-baseline='central'%3EJ!G%3C/svg%3E" alt="JIG Logo">
+            <img src="jig_logo.png" alt="JIG Logo">
         </div>
         <p class="tagline">Bid for Exclusive Creator Experiences</p>
         
-        <div id="redirectMessage" class="redirect-message">
-            <p>🔄 Attempting to open in JIG app...</p>
-            <p style="font-size: 0.9rem; margin-top: 10px;">If the app doesn't open automatically, please download it below.</p>
-        </div>
+        <a class="primary-button" href="/jig-links/app/" rel="noopener noreferrer">
+            🚀 Launch J!G
+        </a>
         
-        <div class="cta-buttons">
-            <a class="primary-button" href="/jig-links/app/" rel="noopener noreferrer">
-                🌐 Open Web App
-            </a>
+        <!-- Install Instructions -->
+        <div class="install-section">
+            <h3>📲 Install J!G on Your Device</h3>
             
-            <a class="secondary-button" href="https://bit.ly/getjigapp" target="_blank" rel="noopener noreferrer">
-                📱 Download Android App
-            </a>
+            <div class="platform-tabs">
+                <div class="platform-tab active" onclick="showPlatform('ios')">iPhone/iPad</div>
+                <div class="platform-tab" onclick="showPlatform('android')">Android</div>
+                <div class="platform-tab" onclick="showPlatform('desktop')">Desktop</div>
+            </div>
+            
+            <!-- iOS Instructions -->
+            <div id="ios-content" class="platform-content active">
+                <div class="install-step">
+                    <strong>Step 1:</strong>
+                    Tap "Launch J!G" above to open the app in Safari
+                </div>
+                <div class="install-step">
+                    <strong>Step 2:</strong>
+                    Tap the Share button (box with arrow) at the bottom
+                </div>
+                <div class="install-step">
+                    <strong>Step 3:</strong>
+                    Scroll down and tap "Add to Home Screen"
+                </div>
+                <div class="install-step">
+                    <strong>Step 4:</strong>
+                    Tap "Add" in the top right corner
+                </div>
+                <div class="install-step">
+                    <strong>Done!</strong>
+                    J!G icon will appear on your home screen. Tap it to open the app anytime.
+                </div>
+            </div>
+            
+            <!-- Android Instructions -->
+            <div id="android-content" class="platform-content">
+                <div class="install-step">
+                    <strong>Step 1:</strong>
+                    Tap "Launch J!G" above to open the app in Chrome
+                </div>
+                <div class="install-step">
+                    <strong>Step 2:</strong>
+                    Tap the three dots menu (⋮) in the top right
+                </div>
+                <div class="install-step">
+                    <strong>Step 3:</strong>
+                    Tap "Add to Home screen" or "Install app"
+                </div>
+                <div class="install-step">
+                    <strong>Step 4:</strong>
+                    Tap "Add" or "Install" to confirm
+                </div>
+                <div class="install-step">
+                    <strong>Done!</strong>
+                    J!G icon will appear on your home screen. Tap it to open the app anytime.
+                </div>
+            </div>
+            
+            <!-- Desktop Instructions -->
+            <div id="desktop-content" class="platform-content">
+                <div class="install-step">
+                    <strong>Step 1:</strong>
+                    Click "Launch J!G" above to open the app in your browser
+                </div>
+                <div class="install-step">
+                    <strong>Step 2 (Chrome/Edge):</strong>
+                    Look for the install icon (⊕ or computer icon) in the address bar, or go to Settings → Install J!G
+                </div>
+                <div class="install-step">
+                    <strong>Step 2 (Safari):</strong>
+                    Go to File → Add to Dock
+                </div>
+                <div class="install-step">
+                    <strong>Done!</strong>
+                    J!G will open as a standalone app. Access it from your apps menu or dock.
+                </div>
+            </div>
         </div>
         
+        <!-- How It Works -->
         <div class="info">
-            <h3>🎯 How It Works:</h3>
+            <h3>🎯 How It Works</h3>
             <div class="features">
                 <div class="feature">
                     <strong>🪙 Purchase JigCoins</strong><br>
-                    Buy jigcoins to participate
+                    Buy jigcoins to participate in exclusive events
                 </div>
                 <div class="feature">
                     <strong>🏆 Bid in Arenas</strong><br>
-                    Compete for exclusive creator experiences
+                    Compete with other fans for unique creator experiences
                 </div>
                 <div class="feature">
                     <strong>🎁 Win Amazing Rewards</strong><br>
                     Hang out with your favorite creators, get exclusive access, and more!
                 </div>
             </div>
-            
-            <div class="download-info">
-                <strong>Android App Requirements:</strong> Android 5.0+ | 
-                <strong>Size:</strong> ~94MB | 
-                <strong>Age:</strong> 18+ for purchases
-            </div>
         </div>
 
         <div class="contact">
-            <strong>Contact:</strong>
-            <br>
-            <a href="mailto:grandjig619@gmail.com">grandjig619@gmail.com</a>
-            <br>
-            <span>Supporting mail: <a href="mailto:tobioyewale24@gmail.com">tobioyewale24@gmail.com</a></span>
+            <strong>Contact Us:</strong><br>
+            <a href="mailto:grandjig619@gmail.com">grandjig619@gmail.com</a><br>
+            Support: <a href="mailto:tobioyewale24@gmail.com">tobioyewale24@gmail.com</a>
         </div>
     </div>
 
     <script>
-        // Parse URL parameters
+        function showPlatform(platform) {
+            // Hide all contents
+            document.querySelectorAll('.platform-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.platform-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected content
+            document.getElementById(platform + '-content').classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        // Deep link handling (keep existing functionality)
         const urlParams = new URLSearchParams(window.location.search);
         const path = urlParams.get('path');
         
-        // Only attempt deep link if we have a path parameter
         if (path) {
             let deepLink = '';
             
-            // Build the correct deep link based on the path
             switch(path) {
                 case 'profile':
                     const profileUserId = urlParams.get('userId');
                     if (profileUserId) {
-                        deepLink = `jiggy://profile?userId=${profileUserId}`;
+                        deepLink = `jig://profile?userId=${profileUserId}`;
                     }
                     break;
                     
@@ -260,7 +363,7 @@
                     const date = urlParams.get('date');
                     
                     if (streamId) {
-                        deepLink = `jiggy://lobby?streamId=${streamId}`;
+                        deepLink = `jig://lobby?streamId=${streamId}`;
                         if (title) deepLink += `&streamTitle=${encodeURIComponent(title)}`;
                         if (creator) deepLink += `&creatorUsername=${encodeURIComponent(creator)}`;
                         if (date) deepLink += `&scheduledDate=${date}`;
@@ -272,28 +375,15 @@
                     const username = urlParams.get('username');
                     
                     if (chatUserId) {
-                        deepLink = `jiggy://chat?userId=${chatUserId}`;
+                        deepLink = `jig://chat?userId=${chatUserId}`;
                         if (username) deepLink += `&username=${encodeURIComponent(username)}`;
                     }
                     break;
             }
             
-            // If we have a valid deep link, attempt to open it
             if (deepLink) {
                 console.log('Attempting to open deep link:', deepLink);
-                
-                const redirectMsg = document.getElementById('redirectMessage');
-                if (redirectMsg) {
-                    redirectMsg.classList.add('active');
-                }
-                
                 window.location.href = deepLink;
-                
-                setTimeout(() => {
-                    if (redirectMsg) {
-                        redirectMsg.classList.remove('active');
-                    }
-                }, 3000);
             }
         }
     </script>
