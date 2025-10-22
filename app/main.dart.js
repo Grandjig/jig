@@ -102883,7 +102883,7 @@ q=A.a([new A.a7(B.ea,A.an(A.a([A.aW(B.rH,B.k,r,16),B.dv,A.n("People you follow",
 s=this.w.a
 B.b.K(q,new A.af(s,new A.aJk(this),A.a0(s).i("af<1,e>")))
 return A.a_(q,B.z,B.i,B.h)},
-afW(){var s=null,r=A.a([new A.a7(B.ea,A.n("Other people",s,s,s,s,s,A.l().$3$color$fontSize$fontWeight(B.e,14,B.aE),s,s,s),s)],t.p),q=this.w.b
+afW(){var s=null,r=A.a([new A.a7(B.ea,A.n("",s,s,s,s,s,A.l().$3$color$fontSize$fontWeight(B.e,14,B.aE),s,s,s),s)],t.p),q=this.w.b
 B.b.K(r,new A.af(q,new A.aJm(this),A.a0(q).i("af<1,e>")))
 return A.a_(r,B.z,B.i,B.h)},
 afI(){var s=null,r=t.p
