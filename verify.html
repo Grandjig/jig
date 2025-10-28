@@ -316,12 +316,14 @@
         }
 
         .overlay-content {
-            max-width: 600px;
-            width: 90%;
+            max-width: 550px;
+            width: 85%;
+            max-height: 90vh;
+            overflow-y: auto;
             background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
             border: 2px solid #E84118;
             border-radius: 20px;
-            padding: 40px 30px;
+            padding: 30px 25px;
             text-align: center;
             animation: slideUp 0.4s ease;
             box-shadow: 0 20px 60px rgba(232, 65, 24, 0.5);
@@ -339,56 +341,56 @@
         }
 
         .overlay-icon {
-            font-size: 64px;
-            margin-bottom: 20px;
+            font-size: 48px;
+            margin-bottom: 15px;
         }
 
         .overlay-title {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             color: #E84118;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .overlay-message {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.6;
             color: #ffffff;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .overlay-highlight {
             background: rgba(232, 65, 24, 0.2);
             border-left: 4px solid #E84118;
-            padding: 20px;
+            padding: 18px;
             border-radius: 12px;
-            margin: 25px 0;
+            margin: 20px 0;
             text-align: left;
         }
 
         .overlay-highlight strong {
             display: block;
-            font-size: 20px;
+            font-size: 18px;
             color: #FFA726;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .overlay-highlight p {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.5;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .overlay-buttons {
             display: grid;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 12px;
+            margin-top: 25px;
         }
 
         .overlay-btn {
-            padding: 18px;
+            padding: 16px;
             border-radius: 12px;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             border: none;
             cursor: pointer;
@@ -439,19 +441,23 @@
             }
 
             .overlay-content {
-                padding: 30px 20px;
+                padding: 25px 18px;
             }
 
             .overlay-title {
-                font-size: 24px;
+                font-size: 20px;
             }
 
             .overlay-message {
-                font-size: 16px;
+                font-size: 15px;
             }
 
             .overlay-icon {
-                font-size: 48px;
+                font-size: 40px;
+            }
+
+            .overlay-highlight p {
+                font-size: 14px;
             }
         }
     </style>
@@ -581,9 +587,10 @@
             
             <div class="overlay-highlight">
                 <strong>But hold up—here's something wild:</strong>
-                <p>🎯 Your fans bid <strong>₦187,000</strong> for a single club night experience with you</p>
-                <p>🎯 They bid <strong>₦126,000</strong> for a private listening party</p>
-                <p>🎯 That's <strong>₦408,000 in 3 weeks</strong> from just 3 experiences</p>
+                <p>🎯 Your fans bid <strong>₦187,000</strong> for a club night experience</p>
+                <p>🎯 They bid <strong>₦126,000</strong> for a listening party</p>
+                <p>🎯 They bid <strong>₦95,000</strong> for a studio hangout</p>
+                <p style="margin-top: 12px; font-size: 18px; color: #FFA726;"><strong>That's ₦408,000 in 3 weeks from just 3 experiences</strong></p>
             </div>
 
             <div class="overlay-message" style="margin-top: 20px;">
@@ -600,7 +607,7 @@
                     🚀 Take me to the app
                 </a>
                 <button class="overlay-btn overlay-btn-secondary" onclick="closeOverlay()">
-                    Maybe later
+                    ✕ Close
                 </button>
             </div>
         </div>
