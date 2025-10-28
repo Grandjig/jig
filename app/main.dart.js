@@ -107346,7 +107346,7 @@ d=n.c
 switch(d){case"profile":d=n.d
 m=A.aW(d.h(0,"userId"))
 l=A.bF(d.h(0,"username"))
-a0="https://grandjig.github.io/jig-links/?path=profile&userId="+m
+a0="https://grandjig.github.io/jig/?path=profile&userId="+m
 d=l
 a1="Check out "+A.f(d==null?"this creator's":d)+" profile on Jig! "+A.f(a0)
 break
@@ -107355,13 +107355,13 @@ k=A.aW(d.h(0,"streamId"))
 j=A.aW(d.h(0,"streamTitle"))
 i=A.aW(d.h(0,"creatorUsername"))
 h=t.CG.a(d.h(0,"scheduledDate"))
-a0="https://grandjig.github.io/jig-links/?path=lobby&streamId="+k+"&title="+A.ov(B.hz,j,B.aq,!1)+"&creator="+A.ov(B.hz,i,B.aq,!1)+"&date="+h.dX()
+a0="https://grandjig.github.io/jig/?path=lobby&streamId="+k+"&title="+A.ov(B.hz,j,B.aq,!1)+"&creator="+A.ov(B.hz,i,B.aq,!1)+"&date="+h.dX()
 a1='Join me in bidding for "'+A.f(j)+'" by '+A.f(i)+" on Jig! "+A.f(a0)
 break
 case"chat":d=n.d
 g=A.aW(d.h(0,"userId"))
 f=A.aW(d.h(0,"username"))
-a0="https://grandjig.github.io/jig-links/?path=chat&userId="+g+"&username="+A.ov(B.hz,f,B.aq,!1)
+a0="https://grandjig.github.io/jig/?path=chat&userId="+g+"&username="+A.ov(B.hz,f,B.aq,!1)
 a1="Let's chat on Jig! "+A.f(a0)
 break
 default:a.N(B.dl,"Unknown share type: "+d,null,null)
