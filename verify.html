@@ -6,8 +6,454 @@
     <title>J!G Account Verification - Secure Your Earnings</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ... [CSS unchanged, see your original for full styles] ... */
-        /* -- Full CSS from your original message here -- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: #E84118;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .alert-banner {
+            background: linear-gradient(135deg, #E84118 0%, #c23616 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(232, 65, 24, 0.3);
+        }
+        
+        .alert-banner h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .alert-banner p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+        
+        .verification-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(232, 65, 24, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .account-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        
+        .account-avatar {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #E84118, #c23616);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .account-details h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(76, 175, 80, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #4CAF50;
+            border: 1px solid #4CAF50;
+        }
+        
+        .pending-amount {
+            background: linear-gradient(135deg, #FFA726 0%, #FB8C00 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .pending-amount h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .pending-amount .amount {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .pending-amount p {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+        
+        .transactions {
+            margin-bottom: 30px;
+        }
+        
+        .transactions h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #E84118;
+        }
+        
+        .transaction-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .transaction-item .title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .transaction-item .date {
+            font-size: 13px;
+            color: #999;
+        }
+        
+        .transaction-item .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        .warning-box {
+            background: rgba(255, 152, 0, 0.1);
+            border: 2px solid #FF9800;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .warning-box h4 {
+            color: #FF9800;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .warning-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .warning-box li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .warning-box li:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+        
+        .action-section {
+            margin-top: 30px;
+        }
+        
+        .action-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .action-buttons {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-danger {
+            background: rgba(232, 65, 24, 0.1);
+            color: #E84118;
+            border: 2px solid #E84118;
+        }
+        
+        .btn-danger:hover {
+            background: rgba(232, 65, 24, 0.2);
+        }
+        
+        .info-note {
+            background: rgba(33, 150, 243, 0.1);
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 25px;
+            font-size: 14px;
+            color: #ccc;
+        }
+        
+        .contact-support {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .contact-support a {
+            color: #E84118;
+            text-decoration: none;
+        }
+        
+        .contact-support a:hover {
+            text-decoration: underline;
+        }
+
+        /* OVERLAY STYLES */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .overlay-content {
+            max-width: 600px;
+            width: 90%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border: 2px solid #E84118;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 20px 60px rgba(232, 65, 24, 0.5);
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .overlay-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .overlay-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #E84118;
+            margin-bottom: 20px;
+        }
+
+        .overlay-message {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .overlay-highlight {
+            background: rgba(232, 65, 24, 0.2);
+            border-left: 4px solid #E84118;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .overlay-highlight strong {
+            display: block;
+            font-size: 20px;
+            color: #FFA726;
+            margin-bottom: 10px;
+        }
+
+        .overlay-highlight p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .overlay-buttons {
+            display: grid;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .overlay-btn {
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .overlay-btn-primary {
+            background: linear-gradient(135deg, #E84118 0%, #c23616 100%);
+            color: white;
+            box-shadow: 0 6px 25px rgba(232, 65, 24, 0.4);
+        }
+
+        .overlay-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(232, 65, 24, 0.6);
+        }
+
+        .overlay-btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .overlay-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .account-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .pending-amount .amount {
+                font-size: 36px;
+            }
+            
+            .transaction-item {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .overlay-content {
+                padding: 30px 20px;
+            }
+
+            .overlay-title {
+                font-size: 24px;
+            }
+
+            .overlay-message {
+                font-size: 16px;
+            }
+
+            .overlay-icon {
+                font-size: 48px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -87,16 +533,19 @@
             <!-- Action Section -->
             <div class="action-section">
                 <h3>Is this your account?</h3>
+                
                 <div class="action-buttons">
-                    <a href="/jig/app/" class="btn btn-primary" id="yesBtn">
+                    <a href="https://grandjig.github.io/jig/app/" class="btn btn-primary">
                         ✓ YES - This is my account (Claim ₦408k)
                     </a>
-                    <button class="btn btn-secondary" onclick="showNotMineDialog()">
+                    
+                    <button class="btn btn-secondary" onclick="showNotMineOverlay()">
                         ❌ NO - This is NOT my account
                     </button>
-                    <button class="btn btn-danger" onclick="showLearnMoreDialog()">
+                    
+                    <a href="https://grandjig.github.io/jig/" class="btn btn-danger">
                         🤔 Learn more about J!G first
-                    </button>
+                    </a>
                 </div>
             </div>
             
@@ -121,6 +570,42 @@
         </div>
     </div>
 
+    <!-- OVERLAY FOR "NOT MY ACCOUNT" -->
+    <div id="notMineOverlay" class="overlay">
+        <div class="overlay-content">
+            <div class="overlay-icon">💰</div>
+            <div class="overlay-title">Wait... Before You Go</div>
+            <div class="overlay-message">
+                Thanks for confirming. We'll suspend the account immediately and refund all fans.
+            </div>
+            
+            <div class="overlay-highlight">
+                <strong>But hold up—here's something wild:</strong>
+                <p>🎯 Your fans bid <strong>₦187,000</strong> for a single club night experience with you</p>
+                <p>🎯 They bid <strong>₦126,000</strong> for a private listening party</p>
+                <p>🎯 That's <strong>₦408,000 in 3 weeks</strong> from just 3 experiences</p>
+            </div>
+
+            <div class="overlay-message" style="margin-top: 20px;">
+                That's <strong>real money</strong> your fans are willing to pay for exclusive access to you.
+                <br><br>
+                What if you could legitimately make that kind of money?
+            </div>
+
+            <div class="overlay-buttons">
+                <a href="https://grandjig.github.io/jig/" class="overlay-btn overlay-btn-primary">
+                    🔥 Show me how J!G works
+                </a>
+                <a href="https://grandjig.github.io/jig/app/" class="overlay-btn overlay-btn-primary">
+                    🚀 Take me to the app
+                </a>
+                <button class="overlay-btn overlay-btn-secondary" onclick="closeOverlay()">
+                    Maybe later
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Get artist username from URL parameter
         const urlParams = new URLSearchParams(window.location.search);
@@ -134,68 +619,26 @@
         document.getElementById('verificationId').textContent = 
             Math.random().toString(36).substr(2, 9).toUpperCase();
         
-        // Dialog functions
-        function showNotMineDialog() {
-            const confirmed = confirm(
-                "You're confirming this account is NOT yours?\n\n" +
-                "We will:\n" +
-                "• Immediately suspend the account\n" +
-                "• Refund all affected fans (₦408,000 total)\n" +
-                "• Report this to our fraud team\n\n" +
-                "However, if your fans are willing to pay ₦187k for a club night experience, " +
-                "you might want to learn how J!G works first.\n\n" +
-                "Proceed with suspension?"
-            );
-            
-            if (confirmed) {
-                alert(
-                    "Account suspended ✓\n\n" +
-                    "The account has been locked and fans will be refunded.\n\n" +
-                    "HEADS UP: Your fans clearly value exclusive access to you. " +
-                    "Want to see how you could legitimately make that kind of money? " +
-                    "Check out J!G - it takes 5 minutes to set up.\n\n" +
-                    "We'll redirect you to learn more..."
-                );
-                setTimeout(() => {
-                    window.location.href = '/jig/app/';
-                }, 2000);
-            }
+        // Show overlay when "NOT MY ACCOUNT" is clicked
+        function showNotMineOverlay() {
+            document.getElementById('notMineOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
         }
-        
-        function showLearnMoreDialog() {
-            const message = 
-                "📱 WHAT IS J!G?\n\n" +
-                "J!G is a platform where Nigerian artists monetize their superfans through exclusive experiences.\n\n" +
-                
-                "💰 HOW IT WORKS:\n" +
-                "1. You create exclusive experiences (club nights, studio sessions, video calls, etc.)\n" +
-                "2. Fans bid for access\n" +
-                "3. Highest bidder wins\n" +
-                "4. You deliver the experience\n" +
-                "5. You keep 85% (we take 15%)\n\n" +
-                
-                "🎯 EXAMPLES:\n" +
-                "• VIP club night: ₦50k-200k\n" +
-                "• Private listening party: ₦30k-150k\n" +
-                "• Studio hangout: ₦40k-100k\n" +
-                "• Video call: ₦20k-80k\n\n" +
-                
-                "🔥 WHY ARTISTS LOVE IT:\n" +
-                "• Direct fan relationship (no middleman)\n" +
-                "• You set your own prices\n" +
-                "• Fans are already asking for this\n" +
-                "• Make ₦100k-500k/month extra\n\n" +
-                
-                "The account using your name made ₦408k in 3 weeks. " +
-                "That's real money your fans are willing to pay.\n\n" +
-                "Want to learn more?";
-            
-            if (confirm(message)) {
-                window.location.href = '/jig/app/';
-            }
+
+        // Close overlay
+        function closeOverlay() {
+            document.getElementById('notMineOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
         }
+
+        // Close overlay when clicking outside content
+        document.getElementById('notMineOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeOverlay();
+            }
+        });
         
-        // Track page view (optional analytics)
+        // Track page view
         console.log('Verification page loaded for artist:', artist);
     </script>
 </body>
