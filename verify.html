@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J!G Account Verification - Secure Your Earnings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ... [CSS unchanged, see your original for full styles] ... */
+        /* -- Full CSS from your original message here -- */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">J!G</div>
+            <h1>Account Verification Required</h1>
+        </div>
+        
+        <!-- Alert Banner -->
+        <div class="alert-banner">
+            <h2>🔒 Security Check in Progress</h2>
+            <p>Funds are on hold until account ownership is verified</p>
+        </div>
+        
+        <!-- Verification Card -->
+        <div class="verification-card">
+            <!-- Account Info -->
+            <div class="account-info">
+                <div class="account-avatar">
+                    <span id="artistInitial">?</span>
+                </div>
+                <div class="account-details">
+                    <h3 id="artistUsername">@username</h3>
+                    <span class="verified-badge">✓ Verified Account</span>
+                </div>
+            </div>
+            
+            <!-- Pending Amount -->
+            <div class="pending-amount">
+                <h3>Total Pending Payout</h3>
+                <div class="amount">₦408,000</div>
+                <p>Awaiting account verification</p>
+            </div>
+            
+            <!-- Recent Transactions -->
+            <div class="transactions">
+                <h4>Recent Completed Experiences</h4>
+                
+                <div class="transaction-item">
+                    <div>
+                        <div class="title">VIP Club Night Experience</div>
+                        <div class="date">Sold 3 days ago • 23 bids</div>
+                    </div>
+                    <div class="price">₦187,000</div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div>
+                        <div class="title">Private Listening Party</div>
+                        <div class="date">Sold 1 week ago • 18 bids</div>
+                    </div>
+                    <div class="price">₦126,000</div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div>
+                        <div class="title">Studio Hangout Session</div>
+                        <div class="date">Sold 2 weeks ago • 15 bids</div>
+                    </div>
+                    <div class="price">₦95,000</div>
+                </div>
+            </div>
+            
+            <!-- Warning Box -->
+            <div class="warning-box">
+                <h4>⚠️ Why is verification required?</h4>
+                <ul>
+                    <li>We've detected unusual activity on this account</li>
+                    <li>Multiple fans are asking about their purchased experiences</li>
+                    <li>Account was flagged by our anti-fraud system</li>
+                    <li>We need to confirm you're the legitimate account owner</li>
+                </ul>
+            </div>
+            
+            <!-- Action Section -->
+            <div class="action-section">
+                <h3>Is this your account?</h3>
+                <div class="action-buttons">
+                    <a href="/jig/app/" class="btn btn-primary" id="yesBtn">
+                        ✓ YES - This is my account (Claim ₦408k)
+                    </a>
+                    <button class="btn btn-secondary" onclick="showNotMineDialog()">
+                        ❌ NO - This is NOT my account
+                    </button>
+                    <button class="btn btn-danger" onclick="showLearnMoreDialog()">
+                        🤔 Learn more about J!G first
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Info Note -->
+            <div class="info-note">
+                <strong>📌 Important:</strong> If you claim this account, you'll need to:
+                <br>• Verify your identity (takes 2 minutes)
+                <br>• Confirm delivery of the experiences listed above
+                <br>• Provide bank details for the ₦408,000 payout
+                <br><br>
+                If this account is NOT yours, we'll immediately suspend it and refund all affected fans.
+            </div>
+        </div>
+        
+        <!-- Contact Support -->
+        <div class="contact-support">
+            <p>Questions or concerns?</p>
+            <p>Contact J!G Verification Team: <a href="mailto:grandjig619@gmail.com">grandjig619@gmail.com</a></p>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">
+                Verification ID: VRF-<span id="verificationId"></span>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Get artist username from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const artist = urlParams.get('artist') || 'artist';
+        
+        // Update page with artist info
+        document.getElementById('artistUsername').textContent = '@' + artist;
+        document.getElementById('artistInitial').textContent = artist.charAt(0).toUpperCase();
+        
+        // Generate random verification ID
+        document.getElementById('verificationId').textContent = 
+            Math.random().toString(36).substr(2, 9).toUpperCase();
+        
+        // Dialog functions
+        function showNotMineDialog() {
+            const confirmed = confirm(
+                "You're confirming this account is NOT yours?\n\n" +
+                "We will:\n" +
+                "• Immediately suspend the account\n" +
+                "• Refund all affected fans (₦408,000 total)\n" +
+                "• Report this to our fraud team\n\n" +
+                "However, if your fans are willing to pay ₦187k for a club night experience, " +
+                "you might want to learn how J!G works first.\n\n" +
+                "Proceed with suspension?"
+            );
+            
+            if (confirmed) {
+                alert(
+                    "Account suspended ✓\n\n" +
+                    "The account has been locked and fans will be refunded.\n\n" +
+                    "HEADS UP: Your fans clearly value exclusive access to you. " +
+                    "Want to see how you could legitimately make that kind of money? " +
+                    "Check out J!G - it takes 5 minutes to set up.\n\n" +
+                    "We'll redirect you to learn more..."
+                );
+                setTimeout(() => {
+                    window.location.href = '/jig/app/';
+                }, 2000);
+            }
+        }
+        
+        function showLearnMoreDialog() {
+            const message = 
+                "📱 WHAT IS J!G?\n\n" +
+                "J!G is a platform where Nigerian artists monetize their superfans through exclusive experiences.\n\n" +
+                
+                "💰 HOW IT WORKS:\n" +
+                "1. You create exclusive experiences (club nights, studio sessions, video calls, etc.)\n" +
+                "2. Fans bid for access\n" +
+                "3. Highest bidder wins\n" +
+                "4. You deliver the experience\n" +
+                "5. You keep 85% (we take 15%)\n\n" +
+                
+                "🎯 EXAMPLES:\n" +
+                "• VIP club night: ₦50k-200k\n" +
+                "• Private listening party: ₦30k-150k\n" +
+                "• Studio hangout: ₦40k-100k\n" +
+                "• Video call: ₦20k-80k\n\n" +
+                
+                "🔥 WHY ARTISTS LOVE IT:\n" +
+                "• Direct fan relationship (no middleman)\n" +
+                "• You set your own prices\n" +
+                "• Fans are already asking for this\n" +
+                "• Make ₦100k-500k/month extra\n\n" +
+                
+                "The account using your name made ₦408k in 3 weeks. " +
+                "That's real money your fans are willing to pay.\n\n" +
+                "Want to learn more?";
+            
+            if (confirm(message)) {
+                window.location.href = '/jig/app/';
+            }
+        }
+        
+        // Track page view (optional analytics)
+        console.log('Verification page loaded for artist:', artist);
+    </script>
+</body>
+</html>
