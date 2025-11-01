@@ -395,20 +395,15 @@
         let deepLinkUrl = '';
 
         function showPlatform(platform) {
-            // Hide all contents
             document.querySelectorAll('.platform-content').forEach(content => {
                 content.classList.remove('active');
             });
             
-            // Remove active class from all tabs
             document.querySelectorAll('.platform-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
             
-            // Show selected content
             document.getElementById(platform + '-content').classList.add('active');
-            
-            // Add active class to clicked tab
             event.target.classList.add('active');
         }
 
@@ -429,48 +424,45 @@
             // Show redirect message
             document.getElementById('redirect-message').classList.add('show');
             
-            let deepLink = '';
+            // ✅ BUILD PROPER HASH ROUTE
+            let hashRoute = '';
             
             switch(path) {
                 case 'profile':
                     const profileUserId = urlParams.get('userId');
                     if (profileUserId) {
-                        deepLink = `/jig/app/#/artist-profile?userId=${profileUserId}`;
+                        hashRoute = `#/artist-profile?userId=${profileUserId}`;
                     }
                     break;
                     
                 case 'lobby':
                     const streamId = urlParams.get('streamId');
-                    const title = urlParams.get('title');
-                    const creator = urlParams.get('creator');
-                    const date = urlParams.get('date');
+                    const title = urlParams.get('title') || '';
+                    const creator = urlParams.get('creator') || '';
+                    const date = urlParams.get('date') || new Date().toISOString();
                     
                     if (streamId) {
-                        deepLink = `/jig/app/#/lobby?streamId=${streamId}`;
-                        if (title) deepLink += `&streamTitle=${encodeURIComponent(title)}`;
-                        if (creator) deepLink += `&creatorUsername=${encodeURIComponent(creator)}`;
-                        if (date) deepLink += `&scheduledDate=${date}`;
+                        hashRoute = `#/lobby?streamId=${streamId}&streamTitle=${encodeURIComponent(title)}&creatorUsername=${encodeURIComponent(creator)}&scheduledDate=${date}`;
                     }
                     break;
                     
                 case 'chat':
                     const chatUserId = urlParams.get('userId');
-                    const username = urlParams.get('username');
+                    const username = urlParams.get('username') || '';
                     
                     if (chatUserId) {
-                        deepLink = `/jig/app/#/chat?otherUserId=${chatUserId}`;
-                        if (username) deepLink += `&otherUsername=${encodeURIComponent(username)}`;
+                        hashRoute = `#/chat?otherUserId=${chatUserId}&otherUsername=${encodeURIComponent(username)}`;
                     }
                     break;
             }
             
-            if (deepLink) {
-                deepLinkUrl = deepLink;
-                console.log('Attempting to open deep link:', deepLink);
+            if (hashRoute) {
+                deepLinkUrl = `/jig/app/${hashRoute}`;
+                console.log('Redirecting to:', deepLinkUrl);
                 
-                // Redirect to the app with the deep link route
+                // ✅ REDIRECT TO HASH ROUTE
                 setTimeout(() => {
-                    window.location.href = deepLink;
+                    window.location.href = deepLinkUrl;
                 }, 500);
             }
         }
