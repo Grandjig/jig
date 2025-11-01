@@ -202,6 +202,35 @@
         .contact a:hover {
             text-decoration: underline;
         }
+
+        .redirect-message {
+            background: rgba(232, 65, 24, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #E84118;
+            display: none;
+        }
+
+        .redirect-message.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #E84118;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         
         @media (max-width: 600px) {
             .logo {
@@ -238,6 +267,13 @@
         <a class="primary-button" href="/jig/app/" rel="noopener noreferrer">
             🚀 Launch J!G
         </a>
+
+        <!-- Redirect Message (shown when deep linking) -->
+        <div id="redirect-message" class="redirect-message">
+            <div class="spinner"></div>
+            <p><strong>Opening in J!G app...</strong></p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">If the app doesn't open automatically, <a href="#" onclick="retryDeepLink()" style="color: #E84118; text-decoration: underline;">tap here</a></p>
+        </div>
         
         <!-- About J!G -->
         <div class="about-section">
@@ -356,6 +392,8 @@
     </div>
 
     <script>
+        let deepLinkUrl = '';
+
         function showPlatform(platform) {
             // Hide all contents
             document.querySelectorAll('.platform-content').forEach(content => {
@@ -373,19 +411,31 @@
             // Add active class to clicked tab
             event.target.classList.add('active');
         }
-        
-        // Deep link handling (keep existing functionality)
-        const urlParams = new URLSearchParams(window.location.search);
-        const path = urlParams.get('path');
-        
-        if (path) {
+
+        function retryDeepLink() {
+            if (deepLinkUrl) {
+                window.location.href = deepLinkUrl;
+            }
+        }
+
+        function attemptDeepLink() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const path = urlParams.get('path');
+            
+            if (!path) {
+                return; // No deep link to handle
+            }
+
+            // Show redirect message
+            document.getElementById('redirect-message').classList.add('show');
+            
             let deepLink = '';
             
             switch(path) {
                 case 'profile':
                     const profileUserId = urlParams.get('userId');
                     if (profileUserId) {
-                        deepLink = `jig://profile?userId=${profileUserId}`;
+                        deepLink = `/jig/app/#/artist-profile?userId=${profileUserId}`;
                     }
                     break;
                     
@@ -396,7 +446,7 @@
                     const date = urlParams.get('date');
                     
                     if (streamId) {
-                        deepLink = `jig://lobby?streamId=${streamId}`;
+                        deepLink = `/jig/app/#/lobby?streamId=${streamId}`;
                         if (title) deepLink += `&streamTitle=${encodeURIComponent(title)}`;
                         if (creator) deepLink += `&creatorUsername=${encodeURIComponent(creator)}`;
                         if (date) deepLink += `&scheduledDate=${date}`;
@@ -408,19 +458,25 @@
                     const username = urlParams.get('username');
                     
                     if (chatUserId) {
-                        deepLink = `jig://chat?userId=${chatUserId}`;
-                        if (username) deepLink += `&username=${encodeURIComponent(username)}`;
+                        deepLink = `/jig/app/#/chat?otherUserId=${chatUserId}`;
+                        if (username) deepLink += `&otherUsername=${encodeURIComponent(username)}`;
                     }
                     break;
             }
             
             if (deepLink) {
+                deepLinkUrl = deepLink;
                 console.log('Attempting to open deep link:', deepLink);
-                window.location.href = deepLink;
+                
+                // Redirect to the app with the deep link route
+                setTimeout(() => {
+                    window.location.href = deepLink;
+                }, 500);
             }
         }
+
+        // Run deep link handler on page load
+        window.addEventListener('DOMContentLoaded', attemptDeepLink);
     </script>
 </body>
 </html>
-
-
