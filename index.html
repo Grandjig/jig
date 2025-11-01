@@ -202,6 +202,35 @@
         .contact a:hover {
             text-decoration: underline;
         }
+
+        .redirect-message {
+            background: rgba(232, 65, 24, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #E84118;
+            display: none;
+        }
+
+        .redirect-message.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #E84118;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         
         @media (max-width: 600px) {
             .logo {
@@ -238,6 +267,13 @@
         <a class="primary-button" href="/jig/app/" rel="noopener noreferrer">
             🚀 Launch J!G
         </a>
+
+        <!-- Redirect Message (shown when deep linking) -->
+        <div id="redirect-message" class="redirect-message">
+            <div class="spinner"></div>
+            <p><strong>Opening in J!G app...</strong></p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">If the app doesn't open automatically, <a href="#" onclick="retryDeepLink()" style="color: #E84118; text-decoration: underline;">tap here</a></p>
+        </div>
         
         <!-- About J!G -->
         <div class="about-section">
@@ -356,71 +392,83 @@
     </div>
 
     <script>
+        let deepLinkUrl = '';
+
         function showPlatform(platform) {
-            // Hide all contents
             document.querySelectorAll('.platform-content').forEach(content => {
                 content.classList.remove('active');
             });
             
-            // Remove active class from all tabs
             document.querySelectorAll('.platform-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
             
-            // Show selected content
             document.getElementById(platform + '-content').classList.add('active');
-            
-            // Add active class to clicked tab
             event.target.classList.add('active');
         }
-        
-        // Deep link handling (keep existing functionality)
-        const urlParams = new URLSearchParams(window.location.search);
-        const path = urlParams.get('path');
-        
-        if (path) {
-            let deepLink = '';
+
+        function retryDeepLink() {
+            if (deepLinkUrl) {
+                window.location.href = deepLinkUrl;
+            }
+        }
+
+        function attemptDeepLink() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const path = urlParams.get('path');
+            
+            if (!path) {
+                return; // No deep link to handle
+            }
+
+            // Show redirect message
+            document.getElementById('redirect-message').classList.add('show');
+            
+            // ✅ BUILD PROPER HASH ROUTE
+            let hashRoute = '';
             
             switch(path) {
                 case 'profile':
                     const profileUserId = urlParams.get('userId');
                     if (profileUserId) {
-                        deepLink = `jig://profile?userId=${profileUserId}`;
+                        hashRoute = `#/artist-profile?userId=${profileUserId}`;
                     }
                     break;
                     
                 case 'lobby':
                     const streamId = urlParams.get('streamId');
-                    const title = urlParams.get('title');
-                    const creator = urlParams.get('creator');
-                    const date = urlParams.get('date');
+                    const title = urlParams.get('title') || '';
+                    const creator = urlParams.get('creator') || '';
+                    const date = urlParams.get('date') || new Date().toISOString();
                     
                     if (streamId) {
-                        deepLink = `jig://lobby?streamId=${streamId}`;
-                        if (title) deepLink += `&streamTitle=${encodeURIComponent(title)}`;
-                        if (creator) deepLink += `&creatorUsername=${encodeURIComponent(creator)}`;
-                        if (date) deepLink += `&scheduledDate=${date}`;
+                        hashRoute = `#/lobby?streamId=${streamId}&streamTitle=${encodeURIComponent(title)}&creatorUsername=${encodeURIComponent(creator)}&scheduledDate=${date}`;
                     }
                     break;
                     
                 case 'chat':
                     const chatUserId = urlParams.get('userId');
-                    const username = urlParams.get('username');
+                    const username = urlParams.get('username') || '';
                     
                     if (chatUserId) {
-                        deepLink = `jig://chat?userId=${chatUserId}`;
-                        if (username) deepLink += `&username=${encodeURIComponent(username)}`;
+                        hashRoute = `#/chat?otherUserId=${chatUserId}&otherUsername=${encodeURIComponent(username)}`;
                     }
                     break;
             }
             
-            if (deepLink) {
-                console.log('Attempting to open deep link:', deepLink);
-                window.location.href = deepLink;
+            if (hashRoute) {
+                deepLinkUrl = `/jig/app/${hashRoute}`;
+                console.log('Redirecting to:', deepLinkUrl);
+                
+                // ✅ REDIRECT TO HASH ROUTE
+                setTimeout(() => {
+                    window.location.href = deepLinkUrl;
+                }, 500);
             }
         }
+
+        // Run deep link handler on page load
+        window.addEventListener('DOMContentLoaded', attemptDeepLink);
     </script>
 </body>
 </html>
-
-
