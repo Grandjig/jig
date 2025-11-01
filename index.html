@@ -33,7 +33,7 @@
         .logo {
             width: 140px;
             height: 140px;
-            margin: 0 auto 20px;
+            margin: 0 auto 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -70,6 +70,24 @@
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(232, 65, 24, 0.6);
             background: linear-gradient(45deg, #F15122, #F66735);
+        }
+        
+        .about-section {
+            background: linear-gradient(135deg, rgba(232, 65, 24, 0.15), rgba(241, 81, 34, 0.08));
+            padding: 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(232, 65, 24, 0.3);
+            box-shadow: 0 8px 30px rgba(232, 65, 24, 0.2);
+        }
+        
+        .about-text {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #ffffff;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .install-section {
@@ -203,6 +221,10 @@
             .tagline {
                 font-size: 1.1rem;
             }
+            
+            .about-text {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -211,11 +233,41 @@
         <div class="logo">
             <img src="jig_logo.png" alt="JIG Logo">
         </div>
-        <p class="tagline">Bid for Exclusive Creator Experiences</p>
+        <p class="tagline">Bid for Exclusive Experiences</p>
         
         <a class="primary-button" href="/jig/app/" rel="noopener noreferrer">
             🚀 Launch J!G
         </a>
+        
+        <!-- About J!G -->
+        <div class="about-section">
+            <p class="about-text">
+                J!G helps creatives auction exclusive experiences to their fans and communities.
+            </p>
+        </div>
+        
+        <!-- How It Works -->
+        <div class="info">
+            <h3>🎯 How It Works</h3>
+            <div class="features">
+                <div class="feature">
+                    <strong>📅 Set up an event!</strong><br>
+                    This is the experience you are going to deliver and its details
+                </div>
+                <div class="feature">
+                    <strong>📢 Share your event!</strong><br>
+                    Share the link to this event with your fans and communities so they can come bid for it
+                </div>
+                <div class="feature">
+                    <strong>🤝 Plan with your winners!</strong><br>
+                    Send the winners the arrangements of how you will deliver the experience
+                </div>
+                <div class="feature">
+                    <strong>💰 Get your funds!</strong><br>
+                    The winning bid amounts will be sent directly to you!
+                </div>
+            </div>
+        </div>
         
         <!-- Install Instructions -->
         <div class="install-section">
@@ -295,25 +347,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- How It Works -->
-        <div class="info">
-            <h3>🎯 How It Works</h3>
-            <div class="features">
-                <div class="feature">
-                    <strong>🪙 Purchase JigCoins</strong><br>
-                    Buy jigcoins to participate in exclusive events
-                </div>
-                <div class="feature">
-                    <strong>🏆 Bid in Arenas</strong><br>
-                    Compete with other fans for unique creator experiences
-                </div>
-                <div class="feature">
-                    <strong>🎁 Win Amazing Rewards</strong><br>
-                    Hang out with your favorite creators, get exclusive access, and more!
-                </div>
-            </div>
-        </div>
 
         <div class="contact">
             <strong>Contact Us:</strong><br>
@@ -388,5 +421,6 @@
         }
     </script>
 </body>
-
 </html>
+
+
