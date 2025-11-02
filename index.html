@@ -264,15 +264,16 @@
         </div>
         <p class="tagline">Bid for Exclusive Experiences</p>
         
-        <a class="primary-button" href="/jig/app/" rel="noopener noreferrer">
+        <!-- ✅ FIXED: Direct link to Flutter app -->
+        <a class="primary-button" href="#/" rel="noopener noreferrer">
             🚀 Launch J!G
         </a>
 
-        <!-- Redirect Message (shown when deep linking) -->
+        <!-- Redirect Message -->
         <div id="redirect-message" class="redirect-message">
             <div class="spinner"></div>
             <p><strong>Opening in J!G app...</strong></p>
-            <p style="margin-top: 10px; font-size: 0.9rem;">If the app doesn't open automatically, <a href="#" onclick="retryDeepLink()" style="color: #E84118; text-decoration: underline;">tap here</a></p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Redirecting in <span id="countdown">1</span> second(s)...</p>
         </div>
         
         <!-- About J!G -->
@@ -392,8 +393,6 @@
     </div>
 
     <script>
-        let deepLinkUrl = '';
-
         function showPlatform(platform) {
             document.querySelectorAll('.platform-content').forEach(content => {
                 content.classList.remove('active');
@@ -407,24 +406,21 @@
             event.target.classList.add('active');
         }
 
-        function retryDeepLink() {
-            if (deepLinkUrl) {
-                window.location.href = deepLinkUrl;
-            }
-        }
-
         function attemptDeepLink() {
             const urlParams = new URLSearchParams(window.location.search);
             const path = urlParams.get('path');
             
             if (!path) {
-                return; // No deep link to handle
+                console.log('No deep link path found');
+                return;
             }
+
+            console.log('Deep link detected:', path, urlParams.toString());
 
             // Show redirect message
             document.getElementById('redirect-message').classList.add('show');
             
-            // ✅ BUILD PROPER HASH ROUTE
+            // ✅ BUILD HASH ROUTE DIRECTLY
             let hashRoute = '';
             
             switch(path) {
@@ -457,17 +453,26 @@
             }
             
             if (hashRoute) {
-                deepLinkUrl = `/jig/app/${hashRoute}`;
-                console.log('Redirecting to:', deepLinkUrl);
+                console.log('Redirecting to:', hashRoute);
                 
-                // ✅ REDIRECT TO HASH ROUTE
-                setTimeout(() => {
-                    window.location.href = deepLinkUrl;
-                }, 500);
+                // ✅ COUNTDOWN AND REDIRECT
+                let countdown = 1;
+                const countdownEl = document.getElementById('countdown');
+                
+                const timer = setInterval(() => {
+                    countdown--;
+                    if (countdownEl) countdownEl.textContent = countdown;
+                    
+                    if (countdown <= 0) {
+                        clearInterval(timer);
+                        // ✅ REPLACE CURRENT HISTORY ENTRY (NO BACK BUTTON LOOP)
+                        window.location.replace(hashRoute);
+                    }
+                }, 1000);
             }
         }
 
-        // Run deep link handler on page load
+        // ✅ RUN ON PAGE LOAD
         window.addEventListener('DOMContentLoaded', attemptDeepLink);
     </script>
 </body>
