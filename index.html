@@ -164,7 +164,8 @@
         </div>
         <p class="tagline">Bid for Exclusive Experiences</p>
         
-        <a class="primary-button" href="#/" rel="noopener noreferrer">
+        <!-- ✅ Link to actual Flutter app -->
+        <a class="primary-button" href="app/#/" rel="noopener noreferrer">
             🚀 Launch J!G
         </a>
         
@@ -204,7 +205,7 @@
     </div>
 
     <script>
-        // ✅ IMMEDIATE REDIRECT FOR WEB APP (NO LOADING SCREEN)
+        // ✅ REDIRECT TO FLUTTER APP IN /app/ SUBDIRECTORY
         (function() {
             const urlParams = new URLSearchParams(window.location.search);
             const path = urlParams.get('path');
@@ -224,7 +225,7 @@
                 case 'profile':
                     const profileUserId = urlParams.get('userId');
                     if (profileUserId) {
-                        hashRoute = `#/artist-profile?userId=${profileUserId}`;
+                        hashRoute = `/app/#/artist-profile?userId=${profileUserId}`;
                     }
                     break;
                     
@@ -235,7 +236,7 @@
                     const date = urlParams.get('date') || new Date().toISOString();
                     
                     if (streamId) {
-                        hashRoute = `#/lobby?streamId=${streamId}&streamTitle=${encodeURIComponent(title)}&creatorUsername=${encodeURIComponent(creator)}&scheduledDate=${date}`;
+                        hashRoute = `/app/#/lobby?streamId=${streamId}&streamTitle=${encodeURIComponent(title)}&creatorUsername=${encodeURIComponent(creator)}&scheduledDate=${date}`;
                     }
                     break;
                     
@@ -244,7 +245,7 @@
                     const username = urlParams.get('username') || '';
                     
                     if (chatUserId) {
-                        hashRoute = `#/chat?otherUserId=${chatUserId}&otherUsername=${encodeURIComponent(username)}`;
+                        hashRoute = `/app/#/chat?otherUserId=${chatUserId}&otherUsername=${encodeURIComponent(username)}`;
                     }
                     break;
             }
@@ -252,6 +253,7 @@
             // Immediate redirect if we have a valid route
             if (hashRoute) {
                 console.log('➡️ Redirecting to:', hashRoute);
+                // Use relative path since we're already at /jig/
                 window.location.replace(hashRoute);
             } else {
                 console.warn('⚠️ Invalid deep link params');
@@ -260,3 +262,4 @@
     </script>
 </body>
 </html>
+
