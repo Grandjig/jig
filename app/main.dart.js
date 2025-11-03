@@ -100583,11 +100583,11 @@ if(r.x)s=B.Es
 else{s=r.z?"Following":"Follow"
 s=A.k(s,q,q,q,q,q,A.l().$2$fontSize$fontWeight(14,B.am),q,q,q)}return A.bR(A.dg(!1,s,q,q,B.E,q,q,q,q,new A.awW(r),q,p),40,120)},
 agk(){var s,r,q,p=null
-if(this.y)return A.b7(A.Y(A.a([A.wa(p,p,p,p,p,0,p,4,p,new A.jr(B.k,t.ZU)),B.C,A.k("Loading upcoming events...",p,p,p,p,p,A.l().$2$color$fontSize(B.o,14),p,p,p)],t.p),B.l,B.aa,B.f),p,p)
+if(this.y)return A.b7(A.Y(A.a([A.wa(p,p,p,p,p,0,p,4,p,new A.jr(B.k,t.ZU)),B.C,A.k("Loading bidding events...",p,p,p,p,p,A.l().$2$color$fontSize(B.o,14),p,p,p)],t.p),B.l,B.aa,B.f),p,p)
 s=t.p
-r=A.a([new A.a4(B.bu,A.k("Upcoming Events",p,p,p,p,p,A.l().$3$color$fontSize$fontWeight(B.e,20,B.t),p,p,p),p)],s)
+r=A.a([new A.a4(B.bu,A.k("Bidding Events",p,p,p,p,p,A.l().$3$color$fontSize$fontWeight(B.e,20,B.t),p,p,p),p)],s)
 q=this.w
-if(q.length===0)r.push(A.b7(new A.a4(B.bD,A.Y(A.a([A.aU(B.ml,B.O,p,48),B.C,A.k("No upcoming events ",p,p,p,p,p,A.l().$3$color$fontSize$fontWeight(B.o,16,B.X),p,p,p)],s),B.l,B.aa,B.f),p),p,p))
+if(q.length===0)r.push(A.b7(new A.a4(B.bD,A.Y(A.a([A.aU(B.ml,B.O,p,48),B.C,A.k("No bidding events ",p,p,p,p,p,A.l().$3$color$fontSize$fontWeight(B.o,16,B.X),p,p,p)],s),B.l,B.aa,B.f),p),p,p))
 else B.b.J(r,new A.ad(q,new A.ax0(this),A.a0(q).i("ad<1,e>")))
 return A.Y(r,B.z,B.i,B.f)},
 af_(a){var s,r,q,p,o,n,m=this,l=null,k=a.a
@@ -101006,7 +101006,7 @@ n.e.L(B.A,"Error loading upcoming streams",k,null)
 if(n.c==null){s=1
 break}n.A(new A.azm(n))
 j=n.c.P(t.q).f
-i=A.k("Failed to load upcoming events. Please try again later.",null,null,null,null,null,A.l().$0(),null,null,null)
+i=A.k("Failed to load bidding events. Please try again later.",null,null,null,null,null,A.l().$0(),null,null,null)
 j.br(A.cP(A.aTW("Retry",n.gahZ(),B.e),null,null,B.B,null,B.v,null,i,null,B.a3,null,null,null,null,null,null,null,null,null))
 s=6
 break
@@ -101076,7 +101076,7 @@ d=A.an(f,A.hJ(!1,f,!0,new A.a4(B.Q,A.aj(A.a([r,B.b7,q,A.aU(g.x?B.hu:B.ff,B.o,f,f
 if(g.w)c=A.b7(A.Y(A.a([A.wa(f,f,f,f,f,0,f,4,f,new A.jr(B.k,t.ZU)),B.C,A.k("Loading your events...",f,f,f,f,f,A.l().$2$color$fontSize(B.o,14),f,f,f)],b),B.l,B.aa,B.f),f,f)
 else{s=g.r.length
 if(s===0){s=A.aU(B.ml,B.O,f,64)
-r=A.k("No upcoming events",f,f,f,f,f,A.l().$3$color$fontSize$fontWeight(B.o,18,B.X),f,f,f)
+r=A.k("No bidding events",f,f,f,f,f,A.l().$3$color$fontSize$fontWeight(B.o,18,B.X),f,f,f)
 q=A.k("Create an event to get started!",f,f,f,f,f,A.l().$2$color$fontSize(B.aR,14),f,f,f)
 p=A.aa(12)
 o=A.a([new A.bx(0,B.a6,A.a1(B.d.a7(76.5),B.k.gj(0)>>>16&255,B.k.gj(0)>>>8&255,B.k.gj(0)&255),B.eu,8)],t.V)
@@ -103483,7 +103483,7 @@ break
 case 4:p=3
 b3=o
 c=A.G(b3)
-n.d.L(B.A,"Error loading upcoming events: "+A.f(c),null,null)
+n.d.L(B.A,"Error loading bidding events: "+A.f(c),null,null)
 if(n.c==null){s=1
 break}n.A(new A.aMZ(n))
 s=6
@@ -103546,17 +103546,17 @@ afF(){var s=this,r=null,q=t.p
 return A.an(r,A.aj(A.a([A.k("J!G",r,r,r,r,r,A.vK().$1$textStyle(B.EX),r,r,r),B.cy,B.bN,A.bX(r,B.NZ,B.u,!1,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,new A.aMw(s),r,r,r,r,r,r),B.bN,A.bX(r,A.aj(A.a([A.b_l(B.rX,new A.aMx()),B.bN],q),B.l,B.i,B.f,r),B.u,!1,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,new A.aMy(s),r,r,r,r,r,r),A.bX(r,A.fm(B.bz,A.a([B.rT,A.asI(new A.aMz(s),new A.aMA().$0(),t.b5)],q),B.v,B.be,r),B.u,!1,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,new A.aMB(s),r,r,r,r,r,r)],q),B.l,B.i,B.f,r),B.m,B.r,r,r,r,r,r,r,B.bu,r,r,r)},
 agd(){return A.bR(A.lQ(new A.aMJ(this),2,null,null,B.bA,!1),32,null)},
 aga(){var s,r,q,p,o=this,n=null
-if(o.y)return A.b7(new A.a4(B.bD,A.Y(A.a([A.wa(n,n,n,n,n,0,n,4,n,new A.jr(B.k,t.ZU)),B.C,A.k("Loading upcoming events...",n,n,n,n,n,A.l().$2$color$fontSize(B.o,14),n,n,n)],t.p),B.l,B.i,B.f),n),n,n)
+if(o.y)return A.b7(new A.a4(B.bD,A.Y(A.a([A.wa(n,n,n,n,n,0,n,4,n,new A.jr(B.k,t.ZU)),B.C,A.k("Loading bidding events...",n,n,n,n,n,A.l().$2$color$fontSize(B.o,14),n,n,n)],t.p),B.l,B.i,B.f),n),n,n)
 s=o.akp()
 r=s.length
 if(r===0){r=o.x
 q=r==="Following"
 p=A.aU(q?B.mi:B.ml,B.O,n,48)
-if(r==="All")r="No upcoming events found"
-else r=q?"No upcoming events from creators you follow":"No events found for "+r
+if(r==="All")r="No bidding events found"
+else r=q?"No bidding events from creators you follow":"No events found for "+r
 q=t.p
 r=A.a([p,B.C,A.k(r,n,n,n,n,n,A.l().$2$color$fontSize(B.o,16),B.ag,n,n)],q)
-if(o.x==="Following"&&o.f.length===0)B.b.J(r,A.a([B.a9,A.k("Start following creators to see their upcoming events here!",n,n,n,n,n,A.l().$2$color$fontSize(B.aR,14),B.ag,n,n)],q))
+if(o.x==="Following"&&o.f.length===0)B.b.J(r,A.a([B.a9,A.k("Start following creators to see their bidding events here!",n,n,n,n,n,A.l().$2$color$fontSize(B.aR,14),B.ag,n,n)],q))
 return A.b7(new A.a4(B.bD,A.Y(r,B.l,B.i,B.f),n),n,n)}return A.lQ(new A.aMH(o,s),r,n,B.Un,B.S,!0)},
 ag9(a){var s,r,q,p,o,n,m=this,l=null,k=a.ax,j=k==null,i=j?l:J.V(k,"username")
 if(i==null)i="Unknown User"
@@ -103616,7 +103616,7 @@ A.aMZ.prototype={
 $0(){var s=this.a
 s.y=!1
 s.z=!0
-s.Q="Unable to load upcoming events. Please check your connection."},
+s.Q="Unable to load bidding events. Please check your connection."},
 $S:0}
 A.aML.prototype={
 $1(a){return B.b.p(this.a.f,a.b)},
