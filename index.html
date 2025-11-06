@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J!G - Bid for Exclusive Creator Experiences</title>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <title>J!G - Compete for VIP Access</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,219 +13,685 @@
         }
         
         body {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: #000000;
             color: white;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ⚡ AGGRESSIVE BACKGROUND PULSE */
+        .bg-pulse {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, 
+                rgba(250, 70, 14, 0.2) 0%, 
+                transparent 60%);
+            animation: pulse 2.5s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+            50% { transform: scale(1.15) rotate(2deg); opacity: 0.9; }
+        }
+
+        /* 🔥 HERO SECTION - ALPHA DOMINANCE */
+        .hero {
+            position: relative;
+            z-index: 1;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            padding: 60px 20px;
         }
-        
-        .container {
-            max-width: 600px;
-            padding: 40px 20px;
+
+        /* 💎 LOGO - WEAPONIZED */
+        .logo-container {
+            position: relative;
+            margin-bottom: 40px;
+            animation: float 2s ease-in-out infinite;
         }
-        
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
         .logo {
             width: 140px;
             height: 140px;
-            margin: 0 auto 10px;
+            background: linear-gradient(135deg, #FF4400, #FA460E, #FF0000);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 
+                0 0 80px rgba(250, 70, 14, 0.8),
+                0 0 120px rgba(250, 70, 14, 0.6),
+                0 0 160px rgba(250, 70, 14, 0.4);
+            position: relative;
+            animation: glow 1.8s ease-in-out infinite;
+            border: 3px solid rgba(255, 255, 255, 0.3);
         }
-        
-        .logo img {
+
+        @keyframes glow {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 80px rgba(250, 70, 14, 0.8), 
+                    0 0 120px rgba(250, 70, 14, 0.6),
+                    inset 0 0 40px rgba(250, 70, 14, 0.4);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 100px rgba(250, 70, 14, 1), 
+                    0 0 150px rgba(250, 70, 14, 0.8),
+                    inset 0 0 60px rgba(250, 70, 14, 0.6);
+            }
+        }
+
+        .logo-text {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 64px;
+            font-weight: 900;
+            color: white;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        /* ⚡ ALPHA HEADLINE */
+        .headline {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FA460E 50%, #FF0000 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+            letter-spacing: 2px;
+            text-shadow: 0 0 40px rgba(250, 70, 14, 0.6);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* 🎯 STATUS TAG */
+        .subheadline {
+            font-size: 16px;
+            font-weight: 800;
+            color: #FFFFFF;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+            padding: 14px 32px;
+            background: rgba(250, 70, 14, 0.25);
+            border-radius: 30px;
+            border: 2px solid rgba(250, 70, 14, 0.6);
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 0 30px rgba(250, 70, 14, 0.5);
+        }
+
+        /* 🚀 PRIMARY CTA - URGENCY BOMB */
+        .cta-primary {
+            background: linear-gradient(135deg, #FA460E, #FF0000);
+            color: white;
+            padding: 24px 70px;
+            font-size: 22px;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 15px 50px rgba(250, 70, 14, 0.7),
+                0 0 0 0 rgba(250, 70, 14, 0.9);
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            animation: ctaPulse 1.8s ease-in-out infinite;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% { 
+                box-shadow: 
+                    0 15px 50px rgba(250, 70, 14, 0.7), 
+                    0 0 0 0 rgba(250, 70, 14, 0);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 
+                    0 20px 70px rgba(250, 70, 14, 0.9), 
+                    0 0 0 25px rgba(250, 70, 14, 0);
+                transform: scale(1.03);
+            }
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 80px rgba(250, 70, 14, 1);
+        }
+
+        /* 👥 SOCIAL PROOF - ELITE STATUS */
+        .social-proof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+            padding: 18px 32px;
+            background: rgba(250, 70, 14, 0.15);
+            border-radius: 40px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(250, 70, 14, 0.4);
+        }
+
+        .avatars {
+            display: flex;
+            margin-right: 8px;
+        }
+
+        .avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 3px solid #000;
+            margin-left: -12px;
+            transition: transform 0.2s;
+            box-shadow: 0 0 15px rgba(250, 70, 14, 0.4);
+        }
+
+        .avatar:first-child { margin-left: 0; }
+        .avatar:hover { 
+            transform: scale(1.2); 
+            z-index: 10; 
+            box-shadow: 0 0 25px rgba(250, 70, 14, 0.8);
+        }
+
+        .social-text {
+            font-size: 15px;
+            font-weight: 800;
+            color: #FFFFFF;
+            letter-spacing: 0.5px;
+        }
+
+        .social-highlight {
+            color: #FA460E;
+            font-weight: 900;
+        }
+
+        /* 🔴 LIVE INDICATOR - MAXIMUM URGENCY */
+        .live-badge {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #FF0000, #FA460E);
+            padding: 12px 24px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 900;
+            font-size: 13px;
+            letter-spacing: 2px;
+            box-shadow: 
+                0 8px 30px rgba(255, 0, 0, 0.7),
+                0 0 0 0 rgba(255, 0, 0, 0.8);
+            z-index: 100;
+            animation: livePulse 1.2s ease-in-out infinite;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+        }
+
+        @keyframes livePulse {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 
+                    0 8px 30px rgba(255, 0, 0, 0.7),
+                    0 0 0 0 rgba(255, 0, 0, 0);
+            }
+            50% { 
+                transform: scale(1.08); 
+                box-shadow: 
+                    0 12px 40px rgba(255, 0, 0, 0.9),
+                    0 0 0 20px rgba(255, 0, 0, 0);
+            }
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            animation: blink 0.8s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.2; transform: scale(0.8); }
+        }
+
+        /* 📊 FEATURES - ELITE BENEFITS */
+        .features {
+            max-width: 1100px;
+            margin: 100px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(250, 70, 14, 0.15), rgba(0, 0, 0, 0.8));
+            padding: 40px;
+            border-radius: 24px;
+            border: 2px solid rgba(250, 70, 14, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            background: linear-gradient(135deg, rgba(250, 70, 14, 0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        
-        .tagline {
-            font-size: 1.3rem;
+
+        .feature-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(250, 70, 14, 0.7);
+            box-shadow: 0 25px 60px rgba(250, 70, 14, 0.5);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 56px;
+            margin-bottom: 24px;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(250, 70, 14, 0.6));
+        }
+
+        .feature-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 14px;
+            color: #FA460E;
+            letter-spacing: 1px;
+        }
+
+        .feature-desc {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #dddddd;
+            font-weight: 600;
+        }
+
+        /* ⚡ HOW IT WORKS - BATTLE PLAN */
+        .how-it-works {
+            max-width: 950px;
+            margin: 100px auto;
+            padding: 70px 40px;
+            background: rgba(250, 70, 14, 0.08);
+            border-radius: 32px;
+            border: 2px solid rgba(250, 70, 14, 0.3);
+            box-shadow: 0 0 50px rgba(250, 70, 14, 0.3);
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 52px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #FFFFFF, #FA460E, #FF0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+
+        .steps {
+            display: grid;
+            gap: 28px;
+        }
+
+        .step {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 28px 35px;
+            border-radius: 18px;
+            border-left: 6px solid #FA460E;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(250, 70, 14, 0.2);
+        }
+
+        .step:hover {
+            background: rgba(250, 70, 14, 0.2);
+            transform: translateX(15px);
+            border-color: rgba(250, 70, 14, 0.6);
+            box-shadow: 0 10px 40px rgba(250, 70, 14, 0.4);
+        }
+
+        .step-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: #FA460E;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .step-desc {
+            font-size: 16px;
+            color: #dddddd;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        /* 💰 VENUE OWNER CTA */
+        .creator-cta {
+            max-width: 850px;
+            margin: 100px auto;
+            padding: 60px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(250, 70, 14, 0.2), rgba(0, 0, 0, 0.8));
+            border-radius: 28px;
+            border: 3px solid rgba(250, 70, 14, 0.5);
+            box-shadow: 0 0 60px rgba(250, 70, 14, 0.4);
+        }
+
+        .creator-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 44px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #FFFFFF, #FA460E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .creator-desc {
+            font-size: 19px;
+            color: #dddddd;
             margin-bottom: 40px;
-            color: #cccccc;
-            font-weight: 500;
+            line-height: 1.7;
+            font-weight: 600;
         }
-        
-        .primary-button {
-            background: linear-gradient(45deg, #E84118, #F15122);
-            color: white;
-            padding: 22px 50px;
-            font-size: 1.5rem;
-            font-weight: bold;
+
+        .cta-secondary {
+            background: transparent;
+            color: #FA460E;
+            padding: 20px 50px;
+            font-size: 20px;
+            font-weight: 900;
             text-decoration: none;
             border-radius: 50px;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: 3px solid #FA460E;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(232, 65, 24, 0.4);
-            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
-        
-        .primary-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(232, 65, 24, 0.6);
-            background: linear-gradient(45deg, #F15122, #F66735);
+
+        .cta-secondary:hover {
+            background: #FA460E;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(250, 70, 14, 0.6);
         }
-        
-        .about-section {
-            background: linear-gradient(135deg, rgba(232, 65, 24, 0.15), rgba(241, 81, 34, 0.08));
-            padding: 30px;
-            border-radius: 20px;
-            margin: 40px 0;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(232, 65, 24, 0.3);
-            box-shadow: 0 8px 30px rgba(232, 65, 24, 0.2);
+
+        /* 📧 FOOTER */
+        .footer {
+            max-width: 1100px;
+            margin: 100px auto 50px;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 2px solid rgba(250, 70, 14, 0.3);
         }
-        
-        .about-text {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            color: #ffffff;
-            font-weight: 500;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
         }
-        
-        .info {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 25px;
-            border-radius: 15px;
-            margin-top: 30px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .info h3 {
-            color: #E84118;
-            margin-bottom: 15px;
-        }
-        
-        .features {
-            display: grid;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .feature {
-            background: rgba(232, 65, 24, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #E84118;
-            text-align: left;
-        }
-        
-        .contact {
-            margin-top: 30px;
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
-        .contact a {
-            color: #E84118;
+
+        .footer-link {
+            color: #FA460E;
             text-decoration: none;
+            font-weight: 800;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
         }
-        
-        .contact a:hover {
+
+        .footer-link:hover {
+            color: #FF4400;
             text-decoration: underline;
+            text-shadow: 0 0 10px rgba(250, 70, 14, 0.8);
         }
-        
-        @media (max-width: 600px) {
+
+        .copyright {
+            color: #888;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* 📱 RESPONSIVE */
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 48px;
+            }
+
+            .subheadline {
+                font-size: 13px;
+                padding: 12px 24px;
+                letter-spacing: 2px;
+            }
+
+            .cta-primary {
+                padding: 20px 45px;
+                font-size: 18px;
+            }
+
             .logo {
-                width: 120px;
-                height: 120px;
+                width: 110px;
+                height: 110px;
             }
-            
-            .primary-button {
-                padding: 18px 40px;
-                font-size: 1.3rem;
+
+            .logo-text {
+                font-size: 52px;
             }
-            
-            .container {
-                padding: 20px 15px;
+
+            .features {
+                grid-template-columns: 1fr;
             }
-            
-            .tagline {
-                font-size: 1.1rem;
+
+            .section-title {
+                font-size: 38px;
             }
-            
-            .about-text {
-                font-size: 1.1rem;
+
+            .creator-title {
+                font-size: 34px;
+            }
+
+            .live-badge {
+                top: 15px;
+                right: 15px;
+                padding: 10px 18px;
+                font-size: 11px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="jig_logo.png" alt="JIG Logo">
-        </div>
-        <p class="tagline">Bid for Exclusive Experiences</p>
-        
-        <!-- ✅ Link to actual Flutter app -->
-        <a class="primary-button" href="app/#/" rel="noopener noreferrer">
-            🚀 Launch J!G
-        </a>
-        
-        <div class="about-section">
-            <p class="about-text">
-                J!G helps creatives auction exclusive experiences to their fans and communities.
-            </p>
-        </div>
-        
-        <div class="info">
-            <h3>🎯 How It Works</h3>
-            <div class="features">
-                <div class="feature">
-                    <strong>📅 Set up an event!</strong><br>
-                    This is the experience you are going to deliver and its details
-                </div>
-                <div class="feature">
-                    <strong>📢 Share your event!</strong><br>
-                    Share the link to this event with your fans and communities so they can come bid for it
-                </div>
-                <div class="feature">
-                    <strong>🤝 Plan with your winners!</strong><br>
-                    Send the winners the arrangements of how you will deliver the experience
-                </div>
-                <div class="feature">
-                    <strong>💰 Get your funds!</strong><br>
-                    The winning bid amounts will be sent directly to you!
-                </div>
+    <!-- ⚡ AGGRESSIVE PULSE BACKGROUND -->
+    <div class="bg-pulse"></div>
+
+    <!-- 🔴 LIVE URGENCY BADGE -->
+    <div class="live-badge">
+        <div class="live-dot"></div>
+        ARENAS LIVE
+    </div>
+
+    <!-- 🔥 HERO SECTION -->
+    <section class="hero">
+        <div class="logo-container">
+            <div class="logo">
+                <span class="logo-text">J!G</span>
             </div>
         </div>
 
-        <div class="contact">
-            <strong>Contact Us:</strong><br>
-            <a href="mailto:grandjig619@gmail.com">grandjig619@gmail.com</a><br>
-            Support: <a href="mailto:tobioyewale24@gmail.com">tobioyewale24@gmail.com</a>
+        <h1 class="headline">
+            OUTBID.<br>DOMINATE.<br>WIN VIP.
+        </h1>
+
+        <div class="subheadline">
+            Lagos' First VIP Battle Arena
         </div>
-    </div>
+
+        <a class="cta-primary" href="app/#/">
+            <span>⚡</span>
+            Enter Arena Now
+        </a>
+
+        <!-- 👥 SOCIAL PROOF - ELITE STATUS -->
+        <div class="social-proof">
+            <div class="avatars">
+                <div class="avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                <div class="avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                <div class="avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                <div class="avatar" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+            </div>
+            <span class="social-text"><span class="social-highlight">523</span> competing this weekend</span>
+        </div>
+    </section>
+
+    <!-- 💎 FEATURES - ELITE BENEFITS -->
+    <section class="features">
+        <div class="feature-card">
+            <span class="feature-icon">🎯</span>
+            <h3 class="feature-title">VIP Access Wars</h3>
+            <p class="feature-desc">
+                Top clubs. Limited VIP spots. Highest bidder secures their position. No pleading bouncers.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-icon">⚡</span>
+            <h3 class="feature-title">48-Hour Battles</h3>
+            <p class="feature-desc">
+                Every Friday/Saturday. New arenas launch. Bid high or lose access. Elite spots vanish fast.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-icon">🏆</span>
+            <h3 class="feature-title">Status Guaranteed</h3>
+            <p class="feature-desc">
+                Winners walk past queues. Reserved tables. Artist meet-ups. Your bid = your flex.
+            </p>
+        </div>
+    </section>
+
+    <!-- ⚡ HOW IT WORKS - BATTLE PLAN -->
+    <section class="how-it-works">
+        <h2 class="section-title">How Alphas Win</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-title">💰 Load Arsenal</div>
+                <div class="step-desc">
+                    Buy JigCoins. 1 coin = ₦1,000. Load what you're willing to spend to dominate.
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-title">🎯 Pick Your Arena</div>
+                <div class="step-desc">
+                    Browse live VIP battles. Quilox. Shimmer. DNA. Each arena = limited winners. Choose wisely.
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-title">⚔️ Outbid Competition</div>
+                <div class="step-desc">
+                    Place your bid. Watch opponents. Go higher if needed. Arena closes - highest bids win.
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-title">🏆 Secure Status</div>
+                <div class="step-desc">
+                    Winner confirmed. Your spot reserved. Walk in like you own it. Because you earned it.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💰 VENUE OWNER CTA -->
+    <section class="creator-cta">
+        <h2 class="creator-title">Own a Club or Restaurant?</h2>
+        <p class="creator-desc">
+            Stop losing money on empty VIP sections. Let your customers compete for premium spots. They bid higher. You make more. Zero risk.
+        </p>
+        <a class="cta-secondary" href="app/#/signup">
+            Launch Your Arena →
+        </a>
+    </section>
+
+    <!-- 📧 FOOTER -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="mailto:grandjig619@gmail.com" class="footer-link">Partner With Us</a>
+            <a href="mailto:tobioyewale24@gmail.com" class="footer-link">Support</a>
+            <a href="app/#/" class="footer-link">Enter App</a>
+        </div>
+        <p class="copyright">
+            © 2025 J!G. All rights reserved. • Where status is earned, not given.
+        </p>
+    </footer>
 
     <script>
-        // ✅ REDIRECT TO FLUTTER APP IN /app/ SUBDIRECTORY
+        // ✅ DEEP LINK HANDLER
         (function() {
             const urlParams = new URLSearchParams(window.location.search);
             const path = urlParams.get('path');
             
-            // If no deep link params, do nothing (show landing page)
-            if (!path) {
-                console.log('No deep link - showing landing page');
-                return;
-            }
+            if (!path) return;
 
-            console.log('🔗 Deep link detected:', path, urlParams.toString());
-
-            // Build hash route based on path
             let hashRoute = '';
             
             switch(path) {
                 case 'profile':
                     const profileUserId = urlParams.get('userId');
                     if (profileUserId) {
-                        hashRoute = `https://grandjig.github.io/jig/app/#/artist-profile?userId=${profileUserId}`;
+                        hashRoute = `app/#/artist-profile?userId=${profileUserId}`;
                     }
                     break;
                     
@@ -236,7 +702,7 @@
                     const date = urlParams.get('date') || new Date().toISOString();
                     
                     if (streamId) {
-                        hashRoute = `https://grandjig.github.io/jig/app/#/lobby?streamId=${streamId}&streamTitle=${encodeURIComponent(title)}&creatorUsername=${encodeURIComponent(creator)}&scheduledDate=${date}`;
+                        hashRoute = `app/#/lobby?streamId=${streamId}&streamTitle=${encodeURIComponent(title)}&creatorUsername=${encodeURIComponent(creator)}&scheduledDate=${date}`;
                     }
                     break;
                     
@@ -245,19 +711,37 @@
                     const username = urlParams.get('username') || '';
                     
                     if (chatUserId) {
-                        hashRoute = `https://grandjig.github.io/jig/app/#/chat?otherUserId=${chatUserId}&otherUsername=${encodeURIComponent(username)}`;
+                        hashRoute = `app/#/chat?otherUserId=${chatUserId}&otherUsername=${encodeURIComponent(username)}`;
                     }
                     break;
             }
             
-            // Immediate redirect if we have a valid route
             if (hashRoute) {
-                console.log('➡️ Redirecting to:', hashRoute);
                 window.location.replace(hashRoute);
-            } else {
-                console.warn('⚠️ Invalid deep link params');
             }
         })();
+
+        // ⚡ SCROLL ANIMATIONS
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(40px)';
+            el.style.transition = 'all 0.7s ease';
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
