@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J!G - Compete for VIP Access</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>J!G - Compete. Win. Dominate.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Gluten:wght@700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -21,7 +21,7 @@
             position: relative;
         }
 
-        /* ⚡ AGGRESSIVE BACKGROUND PULSE */
+        /* ⚡ PRIMAL BACKGROUND PULSE */
         .bg-pulse {
             position: fixed;
             top: -50%;
@@ -29,19 +29,19 @@
             width: 200%;
             height: 200%;
             background: radial-gradient(circle at center, 
-                rgba(250, 70, 14, 0.2) 0%, 
-                transparent 60%);
-            animation: pulse 2.5s ease-in-out infinite;
+                rgba(250, 70, 14, 0.15) 0%, 
+                transparent 50%);
+            animation: pulse 3s ease-in-out infinite;
             pointer-events: none;
             z-index: 0;
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
-            50% { transform: scale(1.15) rotate(2deg); opacity: 0.9; }
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
         }
 
-        /* 🔥 HERO SECTION - ALPHA DOMINANCE */
+        /* 🔥 HERO SECTION - REPTILIAN DOMINANCE */
         .hero {
             position: relative;
             z-index: 1;
@@ -54,74 +54,59 @@
             padding: 60px 20px;
         }
 
-        /* 💎 LOGO - WEAPONIZED */
+        /* 💎 LOGO - KEEP IT SACRED */
         .logo-container {
             position: relative;
-            margin-bottom: 40px;
-            animation: float 2s ease-in-out infinite;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-20px) scale(1.05); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
         }
 
         .logo {
-            width: 140px;
-            height: 140px;
-            background: linear-gradient(135deg, #FF4400, #FA460E, #FF0000);
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #FF4400, #FA460E);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 
-                0 0 80px rgba(250, 70, 14, 0.8),
-                0 0 120px rgba(250, 70, 14, 0.6),
-                0 0 160px rgba(250, 70, 14, 0.4);
+                0 0 60px rgba(250, 70, 14, 0.6),
+                0 0 100px rgba(250, 70, 14, 0.4),
+                0 0 140px rgba(250, 70, 14, 0.2);
             position: relative;
-            animation: glow 1.8s ease-in-out infinite;
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            animation: glow 2s ease-in-out infinite;
         }
 
         @keyframes glow {
-            0%, 100% { 
-                box-shadow: 
-                    0 0 80px rgba(250, 70, 14, 0.8), 
-                    0 0 120px rgba(250, 70, 14, 0.6),
-                    inset 0 0 40px rgba(250, 70, 14, 0.4);
-            }
-            50% { 
-                box-shadow: 
-                    0 0 100px rgba(250, 70, 14, 1), 
-                    0 0 150px rgba(250, 70, 14, 0.8),
-                    inset 0 0 60px rgba(250, 70, 14, 0.6);
-            }
+            0%, 100% { box-shadow: 0 0 60px rgba(250, 70, 14, 0.6), 0 0 100px rgba(250, 70, 14, 0.4); }
+            50% { box-shadow: 0 0 80px rgba(250, 70, 14, 0.8), 0 0 120px rgba(250, 70, 14, 0.6); }
         }
 
         .logo-text {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 64px;
+            font-family: 'Gluten', cursive;
+            font-size: 52px;
             font-weight: 900;
             color: white;
-            letter-spacing: 2px;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            letter-spacing: -2px;
         }
 
-        /* ⚡ ALPHA HEADLINE */
+        /* ⚡ HEADLINE - KENNEDY URGENCY + RAPAILLE DOMINANCE */
         .headline {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 72px;
+            font-size: 56px;
             font-weight: 900;
-            line-height: 0.95;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, #FFFFFF 0%, #FA460E 50%, #FF0000 100%);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFFFFF, #FA460E, #FF4400);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientShift 3s ease infinite;
-            letter-spacing: 2px;
-            text-shadow: 0 0 40px rgba(250, 70, 14, 0.6);
+            animation: gradientShift 4s ease infinite;
         }
 
         @keyframes gradientShift {
@@ -129,180 +114,151 @@
             50% { background-position: 100% 50%; }
         }
 
-        /* 🎯 STATUS TAG */
+        /* 🎯 TRIBAL STATUS TAG - SUTHERLAND REFRAME */
         .subheadline {
-            font-size: 16px;
-            font-weight: 800;
-            color: #FFFFFF;
-            letter-spacing: 3px;
-            margin-bottom: 50px;
-            padding: 14px 32px;
-            background: rgba(250, 70, 14, 0.25);
-            border-radius: 30px;
-            border: 2px solid rgba(250, 70, 14, 0.6);
+            font-size: 18px;
+            font-weight: 600;
+            color: #FA460E;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding: 12px 24px;
+            background: rgba(250, 70, 14, 0.15);
+            border-radius: 25px;
+            border: 1px solid rgba(250, 70, 14, 0.3);
             display: inline-block;
-            text-transform: uppercase;
-            box-shadow: 0 0 30px rgba(250, 70, 14, 0.5);
         }
 
-        /* 🚀 PRIMARY CTA - URGENCY BOMB */
+        /* 💥 PROOF STATEMENT - KENNEDY SOCIAL PROOF */
+        .proof-statement {
+            font-size: 15px;
+            font-weight: 600;
+            color: #FFB89D;
+            margin-bottom: 40px;
+            padding: 10px 20px;
+            background: rgba(255, 184, 157, 0.1);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        /* 🚀 PRIMARY CTA - SURVIVAL INSTINCT */
         .cta-primary {
-            background: linear-gradient(135deg, #FA460E, #FF0000);
+            background: linear-gradient(135deg, #FA460E, #FF4400);
             color: white;
-            padding: 24px 70px;
-            font-size: 22px;
-            font-weight: 900;
+            padding: 22px 60px;
+            font-size: 20px;
+            font-weight: 800;
             text-decoration: none;
-            border-radius: 60px;
+            border-radius: 50px;
             display: inline-flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
             transition: all 0.3s ease;
             box-shadow: 
-                0 15px 50px rgba(250, 70, 14, 0.7),
-                0 0 0 0 rgba(250, 70, 14, 0.9);
+                0 10px 40px rgba(250, 70, 14, 0.5),
+                0 0 0 0 rgba(250, 70, 14, 0.7);
             margin-bottom: 20px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            animation: ctaPulse 1.8s ease-in-out infinite;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.5px;
+            animation: ctaPulse 2s ease-in-out infinite;
         }
 
         @keyframes ctaPulse {
-            0%, 100% { 
-                box-shadow: 
-                    0 15px 50px rgba(250, 70, 14, 0.7), 
-                    0 0 0 0 rgba(250, 70, 14, 0);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 
-                    0 20px 70px rgba(250, 70, 14, 0.9), 
-                    0 0 0 25px rgba(250, 70, 14, 0);
-                transform: scale(1.03);
-            }
+            0%, 100% { box-shadow: 0 10px 40px rgba(250, 70, 14, 0.5), 0 0 0 0 rgba(250, 70, 14, 0); }
+            50% { box-shadow: 0 15px 50px rgba(250, 70, 14, 0.7), 0 0 0 20px rgba(250, 70, 14, 0); }
         }
 
         .cta-primary:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 25px 80px rgba(250, 70, 14, 1);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(250, 70, 14, 0.8);
         }
 
-        /* 👥 SOCIAL PROOF - ELITE STATUS */
+        /* 👥 SOCIAL PROOF - TRIBE VALIDATION */
         .social-proof {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 16px;
-            margin-top: 40px;
-            padding: 18px 32px;
-            background: rgba(250, 70, 14, 0.15);
-            border-radius: 40px;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(250, 70, 14, 0.4);
+            gap: 12px;
+            margin-top: 30px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
         }
 
         .avatars {
             display: flex;
-            margin-right: 8px;
+            margin-right: 5px;
         }
 
         .avatar {
-            width: 42px;
-            height: 42px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            border: 3px solid #000;
-            margin-left: -12px;
+            border: 2px solid #000;
+            margin-left: -10px;
             transition: transform 0.2s;
-            box-shadow: 0 0 15px rgba(250, 70, 14, 0.4);
         }
 
         .avatar:first-child { margin-left: 0; }
-        .avatar:hover { 
-            transform: scale(1.2); 
-            z-index: 10; 
-            box-shadow: 0 0 25px rgba(250, 70, 14, 0.8);
-        }
+        .avatar:hover { transform: scale(1.1); z-index: 10; }
 
         .social-text {
-            font-size: 15px;
-            font-weight: 800;
-            color: #FFFFFF;
-            letter-spacing: 0.5px;
-        }
-
-        .social-highlight {
+            font-size: 14px;
+            font-weight: 600;
             color: #FA460E;
-            font-weight: 900;
         }
 
-        /* 🔴 LIVE INDICATOR - MAXIMUM URGENCY */
+        /* 🔴 LIVE INDICATOR - DEADLINE URGENCY */
         .live-badge {
             position: fixed;
-            top: 25px;
-            right: 25px;
-            background: linear-gradient(135deg, #FF0000, #FA460E);
-            padding: 12px 24px;
-            border-radius: 30px;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #FF0000, #FF4400);
+            padding: 10px 20px;
+            border-radius: 25px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 900;
-            font-size: 13px;
-            letter-spacing: 2px;
-            box-shadow: 
-                0 8px 30px rgba(255, 0, 0, 0.7),
-                0 0 0 0 rgba(255, 0, 0, 0.8);
+            gap: 8px;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5);
             z-index: 100;
-            animation: livePulse 1.2s ease-in-out infinite;
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            text-transform: uppercase;
+            animation: livePulse 1.5s ease-in-out infinite;
         }
 
         @keyframes livePulse {
-            0%, 100% { 
-                transform: scale(1); 
-                box-shadow: 
-                    0 8px 30px rgba(255, 0, 0, 0.7),
-                    0 0 0 0 rgba(255, 0, 0, 0);
-            }
-            50% { 
-                transform: scale(1.08); 
-                box-shadow: 
-                    0 12px 40px rgba(255, 0, 0, 0.9),
-                    0 0 0 20px rgba(255, 0, 0, 0);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .live-dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             background: white;
             border-radius: 50%;
-            animation: blink 0.8s ease-in-out infinite;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: blink 1s ease-in-out infinite;
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.2; transform: scale(0.8); }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
 
-        /* 📊 FEATURES - ELITE BENEFITS */
+        /* 📊 FEATURES - VALUE SIGNALS */
         .features {
-            max-width: 1100px;
-            margin: 100px auto;
+            max-width: 1000px;
+            margin: 80px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .feature-card {
-            background: linear-gradient(135deg, rgba(250, 70, 14, 0.15), rgba(0, 0, 0, 0.8));
-            padding: 40px;
-            border-radius: 24px;
-            border: 2px solid rgba(250, 70, 14, 0.3);
+            background: linear-gradient(135deg, rgba(250, 70, 14, 0.1), rgba(255, 68, 0, 0.05));
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(250, 70, 14, 0.2);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -315,15 +271,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(250, 70, 14, 0.3), transparent);
+            background: linear-gradient(135deg, rgba(250, 70, 14, 0.2), transparent);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-12px);
-            border-color: rgba(250, 70, 14, 0.7);
-            box-shadow: 0 25px 60px rgba(250, 70, 14, 0.5);
+            transform: translateY(-10px);
+            border-color: rgba(250, 70, 14, 0.5);
+            box-shadow: 0 20px 50px rgba(250, 70, 14, 0.3);
         }
 
         .feature-card:hover::before {
@@ -331,205 +287,231 @@
         }
 
         .feature-icon {
-            font-size: 56px;
-            margin-bottom: 24px;
+            font-size: 48px;
+            margin-bottom: 20px;
             display: block;
-            filter: drop-shadow(0 0 10px rgba(250, 70, 14, 0.6));
         }
 
         .feature-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 14px;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 12px;
             color: #FA460E;
-            letter-spacing: 1px;
         }
 
         .feature-desc {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #dddddd;
-            font-weight: 600;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #cccccc;
+            font-weight: 500;
         }
 
-        /* ⚡ HOW IT WORKS - BATTLE PLAN */
+        /* ⚡ HOW IT WORKS - SIMPLE CONQUEST PATH */
         .how-it-works {
-            max-width: 950px;
-            margin: 100px auto;
-            padding: 70px 40px;
-            background: rgba(250, 70, 14, 0.08);
-            border-radius: 32px;
-            border: 2px solid rgba(250, 70, 14, 0.3);
-            box-shadow: 0 0 50px rgba(250, 70, 14, 0.3);
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 60px 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 30px;
+            border: 1px solid rgba(250, 70, 14, 0.2);
         }
 
         .section-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 52px;
+            font-size: 42px;
             font-weight: 900;
             text-align: center;
-            margin-bottom: 60px;
-            background: linear-gradient(135deg, #FFFFFF, #FA460E, #FF0000);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 2px;
-        }
-
-        .steps {
-            display: grid;
-            gap: 28px;
-        }
-
-        .step {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 28px 35px;
-            border-radius: 18px;
-            border-left: 6px solid #FA460E;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(250, 70, 14, 0.2);
-        }
-
-        .step:hover {
-            background: rgba(250, 70, 14, 0.2);
-            transform: translateX(15px);
-            border-color: rgba(250, 70, 14, 0.6);
-            box-shadow: 0 10px 40px rgba(250, 70, 14, 0.4);
-        }
-
-        .step-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 24px;
-            font-weight: 900;
-            color: #FA460E;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        .step-desc {
-            font-size: 16px;
-            color: #dddddd;
-            line-height: 1.6;
-            font-weight: 600;
-        }
-
-        /* 💰 VENUE OWNER CTA */
-        .creator-cta {
-            max-width: 850px;
-            margin: 100px auto;
-            padding: 60px 40px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(250, 70, 14, 0.2), rgba(0, 0, 0, 0.8));
-            border-radius: 28px;
-            border: 3px solid rgba(250, 70, 14, 0.5);
-            box-shadow: 0 0 60px rgba(250, 70, 14, 0.4);
-        }
-
-        .creator-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 44px;
-            font-weight: 900;
-            margin-bottom: 24px;
-            letter-spacing: 2px;
+            margin-bottom: 50px;
             background: linear-gradient(135deg, #FFFFFF, #FA460E);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .creator-desc {
-            font-size: 19px;
-            color: #dddddd;
-            margin-bottom: 40px;
-            line-height: 1.7;
+        .steps {
+            display: grid;
+            gap: 25px;
+        }
+
+        .step {
+            background: rgba(250, 70, 14, 0.08);
+            padding: 25px 30px;
+            border-radius: 15px;
+            border-left: 5px solid #FA460E;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            background: rgba(250, 70, 14, 0.15);
+            transform: translateX(10px);
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #FA460E;
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            font-size: 15px;
+            color: #cccccc;
+            line-height: 1.5;
+        }
+
+        /* 💰 PROOF SECTION - WINNERS SOCIAL PROOF */
+        .winners-proof {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 50px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(250, 70, 14, 0.1));
+            border-radius: 25px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .proof-title {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .proof-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgba(250, 70, 14, 0.3);
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 900;
+            color: #FA460E;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #cccccc;
             font-weight: 600;
         }
 
-        .cta-secondary {
-            background: transparent;
-            color: #FA460E;
-            padding: 20px 50px;
-            font-size: 20px;
-            font-weight: 900;
-            text-decoration: none;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            border: 3px solid #FA460E;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+        /* 🎯 FINAL CTA SECTION */
+        .final-cta {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 60px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(250, 70, 14, 0.2), rgba(255, 68, 0, 0.15));
+            border-radius: 25px;
+            border: 2px solid rgba(250, 70, 14, 0.5);
+            position: relative;
+            overflow: hidden;
         }
 
-        .cta-secondary:hover {
-            background: #FA460E;
-            color: white;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(250, 70, 14, 0.6);
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(250, 70, 14, 0.1) 0%, transparent 50%);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-title {
+            font-size: 38px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .final-desc {
+            font-size: 18px;
+            color: #FFB89D;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            font-weight: 600;
         }
 
         /* 📧 FOOTER */
         .footer {
-            max-width: 1100px;
-            margin: 100px auto 50px;
-            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 80px auto 40px;
+            padding: 40px 20px;
             text-align: center;
-            border-top: 2px solid rgba(250, 70, 14, 0.3);
+            border-top: 1px solid rgba(250, 70, 14, 0.2);
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-bottom: 25px;
+            gap: 30px;
+            margin-bottom: 20px;
             flex-wrap: wrap;
         }
 
         .footer-link {
             color: #FA460E;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 15px;
+            font-weight: 600;
             transition: all 0.2s ease;
-            letter-spacing: 0.5px;
         }
 
         .footer-link:hover {
             color: #FF4400;
             text-decoration: underline;
-            text-shadow: 0 0 10px rgba(250, 70, 14, 0.8);
         }
 
         .copyright {
-            color: #888;
+            color: #666;
             font-size: 14px;
-            font-weight: 600;
         }
 
         /* 📱 RESPONSIVE */
         @media (max-width: 768px) {
             .headline {
-                font-size: 48px;
+                font-size: 36px;
             }
 
             .subheadline {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .proof-statement {
                 font-size: 13px;
-                padding: 12px 24px;
-                letter-spacing: 2px;
             }
 
             .cta-primary {
-                padding: 20px 45px;
+                padding: 18px 40px;
                 font-size: 18px;
             }
 
             .logo {
-                width: 110px;
-                height: 110px;
+                width: 100px;
+                height: 100px;
             }
 
             .logo-text {
-                font-size: 52px;
+                font-size: 42px;
             }
 
             .features {
@@ -537,30 +519,38 @@
             }
 
             .section-title {
-                font-size: 38px;
+                font-size: 32px;
             }
 
-            .creator-title {
-                font-size: 34px;
+            .proof-title {
+                font-size: 28px;
+            }
+
+            .final-title {
+                font-size: 28px;
             }
 
             .live-badge {
-                top: 15px;
-                right: 15px;
-                padding: 10px 18px;
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
                 font-size: 11px;
+            }
+
+            .stat-number {
+                font-size: 32px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- ⚡ AGGRESSIVE PULSE BACKGROUND -->
+    <!-- ⚡ PRIMAL PULSE BACKGROUND -->
     <div class="bg-pulse"></div>
 
     <!-- 🔴 LIVE URGENCY BADGE -->
     <div class="live-badge">
         <div class="live-dot"></div>
-        ARENAS LIVE
+        LIVE BATTLES NOW
     </div>
 
     <!-- 🔥 HERO SECTION -->
@@ -572,19 +562,23 @@
         </div>
 
         <h1 class="headline">
-            OUTBID.<br>DOMINATE.<br>WIN VIP.
+            COMPETE. WIN. DOMINATE.
         </h1>
 
         <div class="subheadline">
-            Lagos' First VIP Battle Arena
+            WHERE COMPETITION CREATES CONNECTION
+        </div>
+
+        <div class="proof-statement">
+            🔥 1,247 people competing right now
         </div>
 
         <a class="cta-primary" href="app/#/">
             <span>⚡</span>
-            Enter Arena Now
+            ENTER THE ARENA
         </a>
 
-        <!-- 👥 SOCIAL PROOF - ELITE STATUS -->
+        <!-- 👥 SOCIAL PROOF -->
         <div class="social-proof">
             <div class="avatars">
                 <div class="avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
@@ -592,88 +586,115 @@
                 <div class="avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
                 <div class="avatar" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
             </div>
-            <span class="social-text"><span class="social-highlight">523</span> competing this weekend</span>
+            <span class="social-text">Join thousands competing today</span>
         </div>
     </section>
 
-    <!-- 💎 FEATURES - ELITE BENEFITS -->
+    <!-- 💎 FEATURES SECTION -->
     <section class="features">
         <div class="feature-card">
             <span class="feature-icon">🎯</span>
-            <h3 class="feature-title">VIP Access Wars</h3>
+            <h3 class="feature-title">Battle Arenas</h3>
             <p class="feature-desc">
-                Top clubs. Limited VIP spots. Highest bidder secures their position. No pleading bouncers.
+                Enter live bidding battles. Highest bidder wins exclusive experiences. One arena, one winner.
             </p>
         </div>
 
         <div class="feature-card">
             <span class="feature-icon">⚡</span>
-            <h3 class="feature-title">48-Hour Battles</h3>
+            <h3 class="feature-title">Real-Time Competition</h3>
             <p class="feature-desc">
-                Every Friday/Saturday. New arenas launch. Bid high or lose access. Elite spots vanish fast.
+                See who's bidding. Watch the leaderboard. Outbid your rivals before time runs out.
             </p>
         </div>
 
         <div class="feature-card">
             <span class="feature-icon">🏆</span>
-            <h3 class="feature-title">Status Guaranteed</h3>
+            <h3 class="feature-title">Winner Takes All</h3>
             <p class="feature-desc">
-                Winners walk past queues. Reserved tables. Artist meet-ups. Your bid = your flex.
+                Win exclusive access, 1-on-1 time, and experiences you can't buy anywhere else.
             </p>
         </div>
     </section>
 
-    <!-- ⚡ HOW IT WORKS - BATTLE PLAN -->
+    <!-- ⚡ HOW IT WORKS -->
     <section class="how-it-works">
-        <h2 class="section-title">How Alphas Win</h2>
+        <h2 class="section-title">Your Path to Victory</h2>
         <div class="steps">
             <div class="step">
-                <div class="step-title">💰 Load Arsenal</div>
+                <div class="step-title">💰 Step 1: Load Your Arsenal</div>
                 <div class="step-desc">
-                    Buy JigCoins. 1 coin = ₦1,000. Load what you're willing to spend to dominate.
+                    Get JigCoins (1 coin = ₦1,000). Load up to compete. The more ammunition, the better your odds.
                 </div>
             </div>
             <div class="step">
-                <div class="step-title">🎯 Pick Your Arena</div>
+                <div class="step-title">🎯 Step 2: Choose Your Battle</div>
                 <div class="step-desc">
-                    Browse live VIP battles. Quilox. Shimmer. DNA. Each arena = limited winners. Choose wisely.
+                    Browse live battle arenas. Each arena = 1 winner. Pick experiences worth fighting for.
                 </div>
             </div>
             <div class="step">
-                <div class="step-title">⚔️ Outbid Competition</div>
+                <div class="step-title">⚔️ Step 3: Outbid Your Rivals</div>
                 <div class="step-desc">
-                    Place your bid. Watch opponents. Go higher if needed. Arena closes - highest bids win.
+                    Place your bid. Beat the competition. Watch the leaderboard. Stay on top until the battle ends.
                 </div>
             </div>
             <div class="step">
-                <div class="step-title">🏆 Secure Status</div>
+                <div class="step-title">🏆 Step 4: Claim Your Victory</div>
                 <div class="step-desc">
-                    Winner confirmed. Your spot reserved. Walk in like you own it. Because you earned it.
+                    Highest bid when time expires wins. Get exclusive access. Your victory is immortalized.
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 💰 VENUE OWNER CTA -->
-    <section class="creator-cta">
-        <h2 class="creator-title">Own a Club or Restaurant?</h2>
-        <p class="creator-desc">
-            Stop losing money on empty VIP sections. Let your customers compete for premium spots. They bid higher. You make more. Zero risk.
+    <!-- 💰 WINNERS PROOF -->
+    <section class="winners-proof">
+        <h2 class="proof-title">People Are Winning Right Now</h2>
+        <p style="color: #cccccc; font-size: 16px; margin-top: 15px;">
+            Real battles. Real winners. Real exclusive experiences.
         </p>
-        <a class="cta-secondary" href="app/#/signup">
-            Launch Your Arena →
-        </a>
+        <div class="proof-stats">
+            <div class="stat-box">
+                <div class="stat-number">1,247</div>
+                <div class="stat-label">Active Competitors</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">127</div>
+                <div class="stat-label">Won This Week</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">48</div>
+                <div class="stat-label">Live Battles Now</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎯 FINAL CTA -->
+    <section class="final-cta">
+        <div class="final-cta-content">
+            <h2 class="final-title">
+                Don't Watch Others Win.<br>Compete. Win. Dominate.
+            </h2>
+            <p class="final-desc">
+                Battles are happening RIGHT NOW. Load your arsenal and enter the arena. Your competition isn't waiting.
+            </p>
+            <a class="cta-primary" href="app/#/">
+                <span>⚡</span>
+                START COMPETING NOW
+            </a>
+        </div>
     </section>
 
     <!-- 📧 FOOTER -->
     <footer class="footer">
         <div class="footer-links">
-            <a href="mailto:grandjig619@gmail.com" class="footer-link">Partner With Us</a>
+            <a href="mailto:grandjig619@gmail.com" class="footer-link">Contact</a>
             <a href="mailto:tobioyewale24@gmail.com" class="footer-link">Support</a>
-            <a href="app/#/" class="footer-link">Enter App</a>
+            <a href="app/#/" class="footer-link">Launch App</a>
         </div>
         <p class="copyright">
-            © 2025 J!G. All rights reserved. • Where status is earned, not given.
+            © 2025 J!G. All rights reserved. • Where competition creates connection.
         </p>
     </footer>
 
@@ -683,7 +704,12 @@
             const urlParams = new URLSearchParams(window.location.search);
             const path = urlParams.get('path');
             
-            if (!path) return;
+            if (!path) {
+                console.log('Landing page - No deep link detected');
+                return;
+            }
+
+            console.log('🔗 Deep link detected:', path);
 
             let hashRoute = '';
             
@@ -717,14 +743,15 @@
             }
             
             if (hashRoute) {
+                console.log('➡️ Redirecting to:', hashRoute);
                 window.location.replace(hashRoute);
             }
         })();
 
         // ⚡ SCROLL ANIMATIONS
         const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -80px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -736,10 +763,10 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .step').forEach(el => {
+        document.querySelectorAll('.feature-card, .step, .stat-box').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(40px)';
-            el.style.transition = 'all 0.7s ease';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
     </script>
