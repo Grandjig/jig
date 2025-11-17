@@ -3,7 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J!G - Compete. Win. Dominate.</title>
+    <title>J!G - Battle for 1-on-1 Creator Access</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="J!G - Battle for exclusive 1-on-1 access to top Nigerian creators. Win private time with photography mentors, business coaches, and fitness trainers through competitive bidding.">
+    <meta name="keywords" content="creator access, mentorship Nigeria, photography courses Lagos, business coaching, exclusive creator experiences, Nigerian creators, course creators">
+    
+    <!-- Open Graph (WhatsApp/Facebook) -->
+    <meta property="og:title" content="J!G - Battle for 1-on-1 Creator Access">
+    <meta property="og:description" content="Win private dinners, business audits, and studio sessions with top Nigerian creators. 127 people won exclusive access this week.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="J!G - Battle for 1-on-1 Creator Access">
+    <meta name="twitter:description" content="Win exclusive 1-on-1 time with Nigerian creators through competitive bidding. 48 live battles now.">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Gluten:wght@700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -21,7 +37,7 @@
             position: relative;
         }
 
-        /* ⚡ PRIMAL BACKGROUND PULSE */
+        /* Background Animation */
         .bg-pulse {
             position: fixed;
             top: -50%;
@@ -41,7 +57,7 @@
             50% { transform: scale(1.1); opacity: 0.8; }
         }
 
-        /* 🔥 HERO SECTION - REPTILIAN DOMINANCE */
+        /* Hero Section */
         .hero {
             position: relative;
             z-index: 1;
@@ -54,7 +70,7 @@
             padding: 60px 20px;
         }
 
-        /* 💎 LOGO - KEEP IT SACRED */
+        /* Logo */
         .logo-container {
             position: relative;
             margin-bottom: 30px;
@@ -76,9 +92,7 @@
             justify-content: center;
             box-shadow: 
                 0 0 60px rgba(250, 70, 14, 0.6),
-                0 0 100px rgba(250, 70, 14, 0.4),
-                0 0 140px rgba(250, 70, 14, 0.2);
-            position: relative;
+                0 0 100px rgba(250, 70, 14, 0.4);
             animation: glow 2s ease-in-out infinite;
         }
 
@@ -95,7 +109,7 @@
             letter-spacing: -2px;
         }
 
-        /* ⚡ HEADLINE - KENNEDY URGENCY + RAPAILLE DOMINANCE */
+        /* Headline */
         .headline {
             font-size: 56px;
             font-weight: 900;
@@ -114,23 +128,25 @@
             50% { background-position: 100% 50%; }
         }
 
-        /* 🎯 TRIBAL STATUS TAG - SUTHERLAND REFRAME */
+        /* Subheadline */
         .subheadline {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             color: #FA460E;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             margin-bottom: 15px;
             padding: 12px 24px;
             background: rgba(250, 70, 14, 0.15);
             border-radius: 25px;
             border: 1px solid rgba(250, 70, 14, 0.3);
             display: inline-block;
+            max-width: 90%;
+            line-height: 1.5;
         }
 
-        /* 💥 PROOF STATEMENT - KENNEDY SOCIAL PROOF */
+        /* Proof Statement */
         .proof-statement {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             color: #FFB89D;
             margin-bottom: 40px;
@@ -140,12 +156,12 @@
             display: inline-block;
         }
 
-        /* 🚀 PRIMARY CTA - SURVIVAL INSTINCT */
+        /* Primary CTA */
         .cta-primary {
             background: linear-gradient(135deg, #FA460E, #FF4400);
             color: white;
-            padding: 22px 60px;
-            font-size: 20px;
+            padding: 22px 50px;
+            font-size: 18px;
             font-weight: 800;
             text-decoration: none;
             border-radius: 50px;
@@ -153,17 +169,9 @@
             align-items: center;
             gap: 12px;
             transition: all 0.3s ease;
-            box-shadow: 
-                0 10px 40px rgba(250, 70, 14, 0.5),
-                0 0 0 0 rgba(250, 70, 14, 0.7);
-            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(250, 70, 14, 0.5);
+            margin-bottom: 15px;
             letter-spacing: 0.5px;
-            animation: ctaPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes ctaPulse {
-            0%, 100% { box-shadow: 0 10px 40px rgba(250, 70, 14, 0.5), 0 0 0 0 rgba(250, 70, 14, 0); }
-            50% { box-shadow: 0 15px 50px rgba(250, 70, 14, 0.7), 0 0 0 20px rgba(250, 70, 14, 0); }
         }
 
         .cta-primary:hover {
@@ -171,7 +179,14 @@
             box-shadow: 0 20px 60px rgba(250, 70, 14, 0.8);
         }
 
-        /* 👥 SOCIAL PROOF - TRIBE VALIDATION */
+        .cta-secondary-text {
+            color: #FFB89D;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* Social Proof */
         .social-proof {
             display: flex;
             align-items: center;
@@ -207,7 +222,7 @@
             color: #FA460E;
         }
 
-        /* 🔴 LIVE INDICATOR - DEADLINE URGENCY */
+        /* Live Badge */
         .live-badge {
             position: fixed;
             top: 20px;
@@ -244,7 +259,7 @@
             50% { opacity: 0.3; }
         }
 
-        /* 📊 FEATURES - VALUE SIGNALS */
+        /* Features Section */
         .features {
             max-width: 1000px;
             margin: 80px auto;
@@ -264,26 +279,10 @@
             overflow: hidden;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(250, 70, 14, 0.2), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
         .feature-card:hover {
             transform: translateY(-10px);
             border-color: rgba(250, 70, 14, 0.5);
             box-shadow: 0 20px 50px rgba(250, 70, 14, 0.3);
-        }
-
-        .feature-card:hover::before {
-            opacity: 1;
         }
 
         .feature-icon {
@@ -306,7 +305,7 @@
             font-weight: 500;
         }
 
-        /* ⚡ HOW IT WORKS - SIMPLE CONQUEST PATH */
+        /* How It Works */
         .how-it-works {
             max-width: 900px;
             margin: 80px auto;
@@ -348,16 +347,16 @@
             font-size: 18px;
             font-weight: 800;
             color: #FA460E;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .step-desc {
             font-size: 15px;
             color: #cccccc;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* 💰 PROOF SECTION - WINNERS SOCIAL PROOF */
+        /* Winners Proof */
         .winners-proof {
             max-width: 900px;
             margin: 80px auto;
@@ -371,8 +370,10 @@
         .proof-title {
             font-size: 36px;
             font-weight: 900;
-            margin-bottom: 20px;
-            color: #FFD700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #FFD700, #FA460E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .proof-stats {
@@ -402,7 +403,123 @@
             font-weight: 600;
         }
 
-        /* 🎯 FINAL CTA SECTION */
+        .winner-example {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 15px;
+            border: 1px solid rgba(250,70,14,0.3);
+            text-align: left;
+        }
+
+        .winner-label {
+            color: #FA460E;
+            font-weight: 800;
+            font-size: 14px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .winner-text {
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .winner-details {
+            color: #FFB89D;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* For Creators Section */
+        .for-creators {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 60px 30px;
+            background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(250,70,14,0.1));
+            border-radius: 25px;
+            border: 2px solid rgba(255,215,0,0.4);
+            text-align: center;
+        }
+
+        .creators-title {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFD700, #FA460E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .creators-subtitle {
+            color: #FFB89D;
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        .creators-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .benefit-card {
+            background: rgba(0,0,0,0.3);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(250,70,14,0.3);
+        }
+
+        .benefit-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-title {
+            color: #FA460E;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .benefit-desc {
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .creator-cta {
+            display: inline-block;
+            margin-top: 40px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 20px 50px;
+            font-size: 18px;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(255,215,0,0.5);
+        }
+
+        .creator-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(255,215,0,0.8);
+        }
+
+        .creator-categories {
+            color: #666;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        /* Final CTA */
         .final-cta {
             max-width: 800px;
             margin: 80px auto;
@@ -411,29 +528,6 @@
             background: linear-gradient(135deg, rgba(250, 70, 14, 0.2), rgba(255, 68, 0, 0.15));
             border-radius: 25px;
             border: 2px solid rgba(250, 70, 14, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .final-cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(250, 70, 14, 0.1) 0%, transparent 50%);
-            animation: rotate 10s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .final-cta-content {
-            position: relative;
-            z-index: 1;
         }
 
         .final-title {
@@ -444,14 +538,14 @@
         }
 
         .final-desc {
-            font-size: 18px;
+            font-size: 17px;
             color: #FFB89D;
             margin-bottom: 35px;
             line-height: 1.6;
             font-weight: 600;
         }
 
-        /* 📧 FOOTER */
+        /* Footer */
         .footer {
             max-width: 1000px;
             margin: 80px auto 40px;
@@ -485,7 +579,7 @@
             font-size: 14px;
         }
 
-        /* 📱 RESPONSIVE */
+        /* Responsive */
         @media (max-width: 768px) {
             .headline {
                 font-size: 36px;
@@ -496,13 +590,9 @@
                 padding: 10px 20px;
             }
 
-            .proof-statement {
-                font-size: 13px;
-            }
-
             .cta-primary {
                 padding: 18px 40px;
-                font-size: 18px;
+                font-size: 16px;
             }
 
             .logo {
@@ -514,15 +604,11 @@
                 font-size: 42px;
             }
 
-            .features {
-                grid-template-columns: 1fr;
-            }
-
             .section-title {
                 font-size: 32px;
             }
 
-            .proof-title {
+            .proof-title, .creators-title {
                 font-size: 28px;
             }
 
@@ -536,24 +622,20 @@
                 padding: 8px 15px;
                 font-size: 11px;
             }
-
-            .stat-number {
-                font-size: 32px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- ⚡ PRIMAL PULSE BACKGROUND -->
+    <!-- Background Animation -->
     <div class="bg-pulse"></div>
 
-    <!-- 🔴 LIVE URGENCY BADGE -->
+    <!-- Live Badge -->
     <div class="live-badge">
         <div class="live-dot"></div>
-        LIVE BATTLES NOW
+        48 CREATOR BATTLES LIVE
     </div>
 
-    <!-- 🔥 HERO SECTION -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="logo-container">
             <div class="logo">
@@ -562,23 +644,28 @@
         </div>
 
         <h1 class="headline">
-            BID. WIN. DOMINATE.
+            BATTLE FOR 1-ON-1<br>
+            CREATOR ACCESS
         </h1>
 
         <div class="subheadline">
-            WHERE COMPETITION CREATES CONNECTION
+            WIN PRIVATE TIME WITH TOP CREATORS • PHOTOGRAPHY • MENTORSHIP • STUDIO SESSIONS
         </div>
 
         <div class="proof-statement">
-            🔥 1,247 people competing right now
+            🔥 127 people won exclusive creator access this week • ₦4.8M in battles
         </div>
 
         <a class="cta-primary" href="app/#/">
-            <span>⚡</span>
-            ENTER THE ARENA
+            <span>🎯</span>
+            SEE LIVE CREATOR BATTLES
         </a>
 
-        <!-- 👥 SOCIAL PROOF -->
+        <p class="cta-secondary-text">
+            ⚡ Free to browse • No credit card required
+        </p>
+
+        <!-- Social Proof -->
         <div class="social-proof">
             <div class="avatars">
                 <div class="avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
@@ -586,130 +673,180 @@
                 <div class="avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
                 <div class="avatar" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
             </div>
-            <span class="social-text">Join thousands competing today</span>
+            <span class="social-text">Join 1,247 competing for creator access today</span>
         </div>
     </section>
 
-    <!-- 💎 FEATURES SECTION -->
+    <!-- Features Section -->
     <section class="features">
         <div class="feature-card">
             <span class="feature-icon">🎯</span>
-            <h3 class="feature-title">Battle Arenas</h3>
+            <h3 class="feature-title">Course Creators Host Battles</h3>
             <p class="feature-desc">
-                Enter live bidding battles. Highest bidder wins exclusive experiences. One arena, one winner.
+                Photography mentors, business coaches, and fitness trainers auction 1-on-1 private time. One winner per battle.
             </p>
         </div>
 
         <div class="feature-card">
             <span class="feature-icon">⚡</span>
-            <h3 class="feature-title">Real-Time Competition</h3>
+            <h3 class="feature-title">Outbid the Competition</h3>
             <p class="feature-desc">
-                See who's bidding. Watch the leaderboard. Outbid your rivals before time runs out.
+                Place your bid. Watch rivals compete. Highest bidder when time expires wins exclusive creator access.
             </p>
         </div>
 
         <div class="feature-card">
             <span class="feature-icon">🏆</span>
-            <h3 class="feature-title">Winner Takes All</h3>
+            <h3 class="feature-title">Win 1-on-1 Creator Time</h3>
             <p class="feature-desc">
-                Win exclusive access, 1-on-1 time, and experiences you can't buy anywhere else.
+                Private dinners. Business audits. Studio sessions. Portfolio reviews. Get what you can't buy anywhere else.
             </p>
         </div>
     </section>
 
-    <!-- ⚡ HOW IT WORKS -->
+    <!-- How It Works -->
     <section class="how-it-works">
-        <h2 class="section-title">Your Path to Victory</h2>
+        <h2 class="section-title">How J!G Works</h2>
         <div class="steps">
             <div class="step">
-                <div class="step-title">💰 Step 1: Load Your Arsenal</div>
+                <div class="step-title">💰 Step 1: Load Battle Credits</div>
                 <div class="step-desc">
-                    Get JigCoins (1 coin = ₦1,000). Load up to compete. The more ammunition, the better your odds.
+                    Get Battle Credits (1 BC = ₦1,000). This is your bidding power. Start with 50 BC (₦50K) to compete in most battles.
                 </div>
             </div>
             <div class="step">
-                <div class="step-title">🎯 Step 2: Choose Your Battle</div>
+                <div class="step-title">🎯 Step 2: Browse Creator Battles</div>
                 <div class="step-desc">
-                    Browse live battle arenas. Each arena = 1 winner. Pick experiences worth fighting for.
+                    See live battles from course creators, mentors, and coaches. Each battle = 1 winner gets private 1-on-1 time. Pick experiences worth competing for.
                 </div>
             </div>
             <div class="step">
                 <div class="step-title">⚔️ Step 3: Outbid Your Rivals</div>
                 <div class="step-desc">
-                    Place your bid. Beat the competition. Watch the leaderboard. Stay on top until the battle ends.
+                    Place your bid. Beat the current highest bidder. Watch the leaderboard update in real-time. Stay on top until the battle closes.
                 </div>
             </div>
             <div class="step">
-                <div class="step-title">🏆 Step 4: Claim Your Victory</div>
+                <div class="step-title">🏆 Step 4: Win Exclusive Creator Access</div>
                 <div class="step-desc">
-                    Highest bid when time expires wins. Get exclusive access. Your victory is immortalized.
+                    Highest bid when time expires wins. You pay your winning bid. Creator contacts you within 24 hours to schedule your private session.
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 💰 WINNERS PROOF -->
+    <!-- Winners Proof -->
     <section class="winners-proof">
-        <h2 class="proof-title">People Are Winning Right Now</h2>
-        <p style="color: #cccccc; font-size: 16px; margin-top: 15px;">
-            Real battles. Real winners. Real exclusive experiences.
+        <h2 class="proof-title">Real Winners. Real Creator Access.</h2>
+        <p style="color: #cccccc; font-size: 16px; margin-top: 15px; line-height: 1.6;">
+            This week alone: 127 people won private dinners, business audits, photography sessions, and studio time with top Nigerian creators.
         </p>
         <div class="proof-stats">
             <div class="stat-box">
                 <div class="stat-number">1,247</div>
-                <div class="stat-label">Active Competitors</div>
+                <div class="stat-label">Active Competitors Today</div>
             </div>
             <div class="stat-box">
                 <div class="stat-number">127</div>
-                <div class="stat-label">Won This Week</div>
+                <div class="stat-label">Won Creator Access This Week</div>
             </div>
             <div class="stat-box">
                 <div class="stat-number">48</div>
-                <div class="stat-label">Live Battles Now</div>
+                <div class="stat-label">Live Creator Battles Now</div>
             </div>
         </div>
-    </section>
-
-    <!-- 🎯 FINAL CTA -->
-    <section class="final-cta">
-        <div class="final-cta-content">
-            <h2 class="final-title">
-                Don't Watch Others Win.<br>Compete. Win. Dominate.
-            </h2>
-            <p class="final-desc">
-                Battles are happening RIGHT NOW. Load your arsenal and enter the arena. Your competition isn't waiting.
+        
+        <div class="winner-example">
+            <p class="winner-label">LATEST WINNER:</p>
+            <p class="winner-text">
+                @ChuksPhotography won "Full Day Shoot + Portfolio Review" battle
             </p>
-            <a class="cta-primary" href="app/#/">
-                <span>⚡</span>
-                START COMPETING NOW
-            </a>
+            <p class="winner-details">
+                Final bid: 85 BC (₦85,000) • Beat 23 competitors
+            </p>
         </div>
     </section>
 
-    <!-- 📧 FOOTER -->
+    <!-- For Creators Section -->
+    <section class="for-creators">
+        <h2 class="creators-title">Are You a Creator?</h2>
+        <p class="creators-subtitle">
+            Turn your expertise into revenue. Auction your 1-on-1 time to your top fans.
+        </p>
+        
+        <div class="creators-benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3 class="benefit-title">Extra Revenue</h3>
+                <p class="benefit-desc">
+                    Auction 1 private session/month = ₦800K-2M extra. You keep 80%, we keep 20%.
+                </p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <h3 class="benefit-title">Your Audience Bids</h3>
+                <p class="benefit-desc">
+                    We don't find bidders. Your fans compete for your time. You announce, they battle.
+                </p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3 class="benefit-title">Zero Effort</h3>
+                <p class="benefit-desc">
+                    We handle bidding, payments, escrow. You just show up and deliver the experience.
+                </p>
+            </div>
+        </div>
+        
+        <a href="mailto:grandjig619@gmail.com?subject=Creator Partnership Inquiry" class="creator-cta">
+            💼 PARTNER WITH J!G
+        </a>
+        
+        <p class="creator-categories">
+            Photography • Business Coaching • Fitness • Music Production • Any expertise
+        </p>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2 class="final-title">
+            Stop DMing Creators.<br>
+            Win Their Undivided Attention.
+        </h2>
+        <p class="final-desc">
+            48 live creator battles happening right now. Photography mentors. Business coaches. Fitness trainers. 
+            One winner per battle gets exclusive 1-on-1 access. Your competition isn't waiting.
+        </p>
+        <a class="cta-primary" href="app/#/">
+            <span>🎯</span>
+            SEE LIVE CREATOR BATTLES
+        </a>
+        <p style="color: #FFB89D; font-size: 13px; margin-top: 20px; font-weight: 600;">
+            ⚡ Free to browse • No credit card required to explore
+        </p>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-links">
-            <a href="mailto:grandjig619@gmail.com" class="footer-link">Contact</a>
+            <a href="mailto:grandjig619@gmail.com" class="footer-link">Creator Partnerships</a>
             <a href="mailto:tobioyewale24@gmail.com" class="footer-link">Support</a>
             <a href="app/#/" class="footer-link">Launch App</a>
         </div>
         <p class="copyright">
-            © 2025 J!G. All rights reserved. • Where competition creates connection.
+            © 2025 J!G. All rights reserved. • Battle for 1-on-1 creator access.
         </p>
     </footer>
 
     <script>
-        // ✅ DEEP LINK HANDLER
+        // Deep Link Handler
         (function() {
             const urlParams = new URLSearchParams(window.location.search);
             const path = urlParams.get('path');
             
-            if (!path) {
-                console.log('Landing page - No deep link detected');
-                return;
-            }
-
-            console.log('🔗 Deep link detected:', path);
+            if (!path) return;
 
             let hashRoute = '';
             
@@ -743,12 +880,11 @@
             }
             
             if (hashRoute) {
-                console.log('➡️ Redirecting to:', hashRoute);
                 window.location.replace(hashRoute);
             }
         })();
 
-        // ⚡ SCROLL ANIMATIONS
+        // Scroll Animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -763,7 +899,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .step, .stat-box').forEach(el => {
+        document.querySelectorAll('.feature-card, .step, .stat-box, .benefit-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
@@ -772,4 +908,3 @@
     </script>
 </body>
 </html>
-
